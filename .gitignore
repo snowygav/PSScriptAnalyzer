@@ -220,7 +220,7 @@ TestResults.xml
 PSCompatibilityCollector/out/
 
 # Folder of build module 
-out
+#out
 
 # Explicitely Include test dir
 !/Tests/**
