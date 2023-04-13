@@ -59,7 +59,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                 errorRecord.Exception.Message, 
                                 hashTableAst.Extent, 
                                 GetName(), 
-                                DiagnosticSeverity.Warning, 
+                                DiagnosticSeverity.Medium, 
                                 fileName,
                                 suggestedCorrections:GetCorrectionExtent(hashTableAst as HashtableAst));
                         }
@@ -175,7 +175,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         /// <summary>

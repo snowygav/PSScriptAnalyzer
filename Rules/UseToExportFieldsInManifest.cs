@@ -75,7 +75,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         GetError(field), 
                         extent, 
                         GetName(), 
-                        DiagnosticSeverity.Warning, 
+                        DiagnosticSeverity.Medium, 
                         fileName,
                         suggestedCorrections: GetCorrectionExtent(field, extent, psModuleInfo));
                 }
@@ -289,7 +289,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         /// <summary>

@@ -120,7 +120,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                             errorMessage,
                             parameter.Extent,
                             GetName(),
-                            DiagnosticSeverity.Warning,
+                            DiagnosticSeverity.Medium,
                             fileName);
                     }
                 }
@@ -205,7 +205,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         /// <summary>

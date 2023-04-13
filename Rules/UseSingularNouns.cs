@@ -86,7 +86,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         string.Format(CultureInfo.CurrentCulture, Strings.UseSingularNounsError, funcAst.Name),
                         extent,
                         GetName(),
-                        DiagnosticSeverity.Warning,
+                        DiagnosticSeverity.Medium,
                         fileName,
                         suggestedCorrections: new CorrectionExtent[] { GetCorrection(pluralizer, extent, funcAst.Name, noun) });
                 }
@@ -135,7 +135,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         /// <summary>

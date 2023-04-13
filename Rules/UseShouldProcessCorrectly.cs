@@ -112,12 +112,12 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         private DiagnosticSeverity GetDianosticSeverity()
         {
-            return DiagnosticSeverity.Warning;
+            return DiagnosticSeverity.Medium;
         }
 
         /// <summary>

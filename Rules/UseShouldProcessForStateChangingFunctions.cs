@@ -39,7 +39,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     string.Format(CultureInfo.CurrentCulture, Strings.UseShouldProcessForStateChangingFunctionsError, funcDefAst.Name), 
                     Helper.Instance.GetScriptExtentForFunctionName(funcDefAst),                    
                     this.GetName(), 
-                    DiagnosticSeverity.Warning, 
+                    DiagnosticSeverity.Medium, 
                     fileName);
             }
                             
@@ -120,7 +120,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns>Rule severity {Information, Warning, Error}</returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         /// <summary>

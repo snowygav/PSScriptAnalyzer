@@ -60,7 +60,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         if (commonParamNames.Contains(paramName, StringComparer.OrdinalIgnoreCase))
                         {
                             yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.ReservedParamsError, funcAst.Name, paramName),
-                                paramAst.Extent, GetName(), DiagnosticSeverity.Warning, fileName);
+                                paramAst.Extent, GetName(), DiagnosticSeverity.Medium, fileName);
                         }
                     }
                 }
@@ -107,7 +107,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         /// <summary>

@@ -63,7 +63,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                 string.Format(CultureInfo.CurrentCulture, Strings.AvoidGlobalFunctionsError),
                                 functionNameExtent,
                                 GetName(),
-                                DiagnosticSeverity.Warning,
+                                DiagnosticSeverity.Medium,
                                 fileName,
                                 functionDefinitionAst.Name));
             }
@@ -93,7 +93,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
 
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         public string GetSourceName()

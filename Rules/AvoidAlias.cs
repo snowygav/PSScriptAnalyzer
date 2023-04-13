@@ -125,7 +125,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         string.Format(CultureInfo.CurrentCulture, Strings.AvoidUsingCmdletAliasesError, commandName, cmdletNameIfCommandNameWasAlias),
                         GetCommandExtent(cmdAst),
                         GetName(),
-                        DiagnosticSeverity.Warning,
+                        DiagnosticSeverity.Medium,
                         fileName,
                         commandName,
                         suggestedCorrections: GetCorrectionExtent(cmdAst, cmdletNameIfCommandNameWasAlias));
@@ -159,7 +159,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                             string.Format(CultureInfo.CurrentCulture, Strings.AvoidUsingCmdletAliasesMissingGetPrefixError, commandName, commdNameWithGetPrefix),
                             GetCommandExtent(cmdAst),
                             GetName(),
-                            DiagnosticSeverity.Warning,
+                            DiagnosticSeverity.Medium,
                             fileName,
                             commandName,
                             suggestedCorrections: GetCorrectionExtent(cmdAst, commdNameWithGetPrefix));
@@ -274,7 +274,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         /// <summary>

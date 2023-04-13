@@ -56,7 +56,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         String.Format(CultureInfo.CurrentCulture, Strings.AvoidUsingPlainTextForPasswordError, paramAst.Name),
                         paramAst.Extent,
                         GetName(),
-                        DiagnosticSeverity.Warning,
+                        DiagnosticSeverity.Medium,
                         fileName,
                         paramName,
                         suggestedCorrections: GetCorrectionExtent(paramAst));
@@ -160,7 +160,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         /// <summary>

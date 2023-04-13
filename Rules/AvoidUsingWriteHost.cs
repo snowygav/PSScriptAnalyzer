@@ -76,12 +76,12 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 if (String.IsNullOrWhiteSpace(fileName))
                 {
                     records.Add(new DiagnosticRecord(String.Format(CultureInfo.CurrentCulture, Strings.AvoidUsingWriteHostErrorScriptDefinition),
-                        cmdAst.Extent, GetName(), DiagnosticSeverity.Warning, fileName));
+                        cmdAst.Extent, GetName(), DiagnosticSeverity.Medium, fileName));
                 }
                 else
                 {
                     records.Add(new DiagnosticRecord(String.Format(CultureInfo.CurrentCulture, Strings.AvoidUsingWriteHostError,
-                        System.IO.Path.GetFileName(fileName)), cmdAst.Extent, GetName(), DiagnosticSeverity.Warning, fileName));
+                        System.IO.Path.GetFileName(fileName)), cmdAst.Extent, GetName(), DiagnosticSeverity.Medium, fileName));
                 }
             }
 
@@ -107,7 +107,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
             {
                 records.Add(new DiagnosticRecord(String.Format(CultureInfo.CurrentCulture, Strings.AvoidUsingConsoleWriteError,
                     String.IsNullOrWhiteSpace(fileName) ? Strings.ScriptDefinitionName : System.IO.Path.GetFileName(fileName), imeAst.Member.Extent.Text),
-                    imeAst.Extent, GetName(), DiagnosticSeverity.Warning, fileName));
+                    imeAst.Extent, GetName(), DiagnosticSeverity.Medium, fileName));
             }
 
             return AstVisitAction.Continue;
@@ -154,7 +154,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         /// <summary>

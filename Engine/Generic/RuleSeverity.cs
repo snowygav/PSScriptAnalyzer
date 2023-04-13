@@ -14,18 +14,23 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
         Information = 0,
 
         /// <summary>
-        /// WARNING: This warning may cause a problem or does not follow PowerShell's recommended guidelines.
+        /// MEDIUM: This warning may cause a problem or does not follow PowerShell's recommended guidelines.
         /// </summary>
-        Warning = 1,
+        Medium = 1,
 
         /// <summary>
-        /// ERROR: This warning is likely to cause a problem or does not follow PowerShell's required guidelines.
+        /// HIGH: This warning is likely to cause a problem or does not follow PowerShell's required guidelines.
         /// </summary>
-        Error = 2,
+        High = 2,
 
         /// <summary>
-        /// ERROR: This diagnostic is caused by an actual parsing error, and is generated only by the engine.
+        /// CRITICAL: This warning is likely to cause major problems and does not follow PowerShell's required guidelines.
         /// </summary>
-        ParseError    = 3,
+        Critical = 3,
+
+        /// <summary>
+        /// PARSEERROR: This diagnostic is caused by an actual parsing error, and is generated only by the engine.
+        /// </summary>
+        ParseError    = 4,
     };
 }

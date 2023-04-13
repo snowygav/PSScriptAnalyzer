@@ -42,7 +42,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     if (reader.CurrentEncoding != System.Text.Encoding.UTF8)
                     {
                         yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.UseUTF8EncodingForHelpFileError, System.IO.Path.GetFileName(fileName), reader.CurrentEncoding),
-                            null, GetName(), DiagnosticSeverity.Warning, fileName);
+                            null, GetName(), DiagnosticSeverity.Medium, fileName);
                     }
                 }
             }
@@ -89,7 +89,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         /// <summary>

@@ -48,7 +48,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 if (funcParamAsts.Count() != funcParamAsts2.Count())
                 {
                     yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.UseIdenticalParametersDSCError),
-                        firstFunc.Extent, GetName(), DiagnosticSeverity.Error, fileName);
+                        firstFunc.Extent, GetName(), DiagnosticSeverity.Critical, fileName);
                 }
 
                 foreach (ParameterAst paramAst in funcParamAsts)
@@ -62,7 +62,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         || !CompareParamAsts(paramAst, paramNames[paramAst.Name.VariablePath.UserPath]))
                     {
                         yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.UseIdenticalParametersDSCError),
-                            paramAst.Extent, GetName(), DiagnosticSeverity.Error, fileName);   
+                            paramAst.Extent, GetName(), DiagnosticSeverity.Critical, fileName);   
                     }
                 }
             }
@@ -161,7 +161,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Error;
+            return RuleSeverity.Critical;
         }
 
         /// <summary>

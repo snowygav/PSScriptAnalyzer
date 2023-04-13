@@ -1646,7 +1646,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer
                 : null;
             DiagnosticSeverity severity = psObject.TryGetPropertyValue("Severity", out object severityValue)
                 ? LanguagePrimitives.ConvertTo<DiagnosticSeverity>(severityValue)
-                : DiagnosticSeverity.Warning;
+                : DiagnosticSeverity.Medium;
 
             bool isValid = true;
             isValid &= CheckHasRequiredProperty("Message", message);

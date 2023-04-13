@@ -86,7 +86,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 {
                     yield return new DiagnosticRecord(
                         String.Format(CultureInfo.CurrentCulture, Strings.AvoidUsernameAndPasswordParamsError, funcAst.Name),
-                        GetExtent(usernameAst, passwordAst, ast), GetName(), DiagnosticSeverity.Error, fileName);
+                        GetExtent(usernameAst, passwordAst, ast), GetName(), DiagnosticSeverity.Critical, fileName);
                 }
             }
         }
@@ -184,7 +184,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Error;
+            return RuleSeverity.Critical;
         }
 
         /// <summary>

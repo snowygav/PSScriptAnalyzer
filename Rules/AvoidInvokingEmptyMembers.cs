@@ -49,7 +49,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                         string.Format(CultureInfo.CurrentCulture,
                                             Strings.AvoidInvokingEmptyMembersError,
                                             context),
-                                        member.Extent, GetName(), DiagnosticSeverity.Warning, fileName);
+                                        member.Extent, GetName(), DiagnosticSeverity.Medium, fileName);
                             }
                         }
                     }
@@ -100,7 +100,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         /// <summary>

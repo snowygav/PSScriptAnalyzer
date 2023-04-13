@@ -68,13 +68,13 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         {
                             yield return new DiagnosticRecord(
                                 String.Format(CultureInfo.CurrentCulture, Strings.AvoidShouldContinueWithoutForceErrorScriptDefinition, funcAst.Name),
-                                imeAst.Extent, GetName(), DiagnosticSeverity.Warning, fileName);
+                                imeAst.Extent, GetName(), DiagnosticSeverity.Medium, fileName);
                         }
                         else
                         {
                             yield return new DiagnosticRecord(
                                 String.Format(CultureInfo.CurrentCulture, Strings.AvoidShouldContinueWithoutForceError, funcAst.Name,
-                                System.IO.Path.GetFileName(fileName)), imeAst.Extent, GetName(), DiagnosticSeverity.Warning, fileName);
+                                System.IO.Path.GetFileName(fileName)), imeAst.Extent, GetName(), DiagnosticSeverity.Medium, fileName);
                         }
                     }
                 }
@@ -122,7 +122,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         /// <summary>

@@ -55,7 +55,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
         //Set the community rule level as warning as the current implementation does not require user to specify rule severity when defining their functions in PS scripts
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         public string GetSourceName()

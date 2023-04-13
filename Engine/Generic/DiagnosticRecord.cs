@@ -61,7 +61,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
         /// </summary>
         public string ScriptName
         {
-            get { return string.IsNullOrEmpty(scriptPath) ? string.Empty : System.IO.Path.GetFileName(scriptPath);}
+            get { return string.IsNullOrEmpty(scriptPath) ? string.Empty : System.IO.Path.GetFileName(scriptPath); }
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
         /// </summary>
         public IEnumerable<CorrectionExtent> SuggestedCorrections
         {
-            get { return suggestedCorrections;  }            
+            get { return suggestedCorrections; }
             set { suggestedCorrections = value; }
         }
 
@@ -100,7 +100,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
         public DiagnosticRecord()
         {
         }
-        
+
         /// <summary>
         /// DiagnosticRecord: The constructor for DiagnosticRecord class that takes in suggestedCorrection
         /// </summary>
@@ -119,9 +119,9 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
             string ruleId = null,
             IEnumerable<CorrectionExtent> suggestedCorrections = null)
         {
-            Message  = message;
+            Message = message;
             RuleName = ruleName;
-            Extent   = extent;
+            Extent = extent;
             Severity = severity;
             ScriptPath = scriptPath;
             RuleSuppressionID = ruleId;
@@ -136,23 +136,28 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
     public enum DiagnosticSeverity : uint
     {
         /// <summary>
-        /// Information: This diagnostic is trivial, but may be useful.
+        /// INFORMATION: This diagnostic is trivial, but may be useful.
         /// </summary>
-        Information   = 0,
+        Information = 0,
 
         /// <summary>
-        /// WARNING: This diagnostic may cause a problem or does not follow PowerShell's recommended guidelines.
+        /// MEDIUM: This warning may cause a problem or does not follow PowerShell's recommended guidelines.
         /// </summary>
-        Warning  = 1,
+        Medium = 1,
 
         /// <summary>
-        /// ERROR: This diagnostic is likely to cause a problem or does not follow PowerShell's required guidelines.
+        /// HIGH: This warning is likely to cause a problem or does not follow PowerShell's required guidelines.
         /// </summary>
-        Error    = 2,
+        High = 2,
+
+        /// <summary>
+        /// CRITICAL: This warning is likely to cause major problems and does not follow PowerShell's required guidelines.
+        /// </summary>
+        Critical = 3,
 
         /// <summary>
         /// ERROR: This diagnostic is caused by an actual parsing error, and is generated only by the engine.
         /// </summary>
-        ParseError    = 3,
+        ParseError = 4,
     };
 }

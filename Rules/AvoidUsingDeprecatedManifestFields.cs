@@ -110,7 +110,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                 yield return
                                     new DiagnosticRecord(
                                         String.Format(CultureInfo.CurrentCulture, warning.BaseObject.ToString()), ast.Extent,
-                                        GetName(), DiagnosticSeverity.Warning, fileName);
+                                        GetName(), DiagnosticSeverity.Medium, fileName);
                             }
                         }
                     }
@@ -160,7 +160,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         /// <summary>

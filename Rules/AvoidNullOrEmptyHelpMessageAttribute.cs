@@ -86,7 +86,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                 yield return new DiagnosticRecord(message,
                                                                     paramAst.Extent, 
                                                                     GetName(), 
-                                                                    DiagnosticSeverity.Warning, 
+                                                                    DiagnosticSeverity.Medium, 
                                                                     fileName, 
                                                                     paramAst.Name.VariablePath.UserPath);
                             }                            
@@ -162,7 +162,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         /// <summary>

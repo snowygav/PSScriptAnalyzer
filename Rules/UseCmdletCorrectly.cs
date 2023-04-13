@@ -71,7 +71,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 if (!MandatoryParameterExists(cmdAst))
                 {
                     yield return new DiagnosticRecord(String.Format(CultureInfo.CurrentCulture, Strings.UseCmdletCorrectlyError, cmdAst.GetCommandName()),
-                        cmdAst.Extent, GetName(), DiagnosticSeverity.Warning, fileName);
+                        cmdAst.Extent, GetName(), DiagnosticSeverity.Medium, fileName);
                 }
             }
         }
@@ -241,7 +241,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         /// <summary>

@@ -41,13 +41,13 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     {
                         yield return new DiagnosticRecord(
                             String.Format(CultureInfo.CurrentCulture, Strings.AvoidDefaultValueSwitchParameterErrorScriptDefinition),
-                            paramAst.Extent, GetName(), DiagnosticSeverity.Warning, fileName);
+                            paramAst.Extent, GetName(), DiagnosticSeverity.Medium, fileName);
                     }
                     else
                     {
                         yield return new DiagnosticRecord(
                             String.Format(CultureInfo.CurrentCulture, Strings.AvoidDefaultValueSwitchParameterError, System.IO.Path.GetFileName(fileName)),
-                            paramAst.Extent, GetName(), DiagnosticSeverity.Warning, fileName);
+                            paramAst.Extent, GetName(), DiagnosticSeverity.Medium, fileName);
                     }
                 }
             }
@@ -94,7 +94,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         /// <summary>

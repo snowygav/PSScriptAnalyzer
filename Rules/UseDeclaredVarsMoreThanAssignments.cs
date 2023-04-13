@@ -91,7 +91,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         /// <summary>
@@ -216,7 +216,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     string.Format(CultureInfo.CurrentCulture, Strings.UseDeclaredVarsMoreThanAssignmentsError, key),
                     assignmentsDictionary_OrdinalIgnoreCase[key].Left.Extent,
                     GetName(),
-                    DiagnosticSeverity.Warning,
+                    DiagnosticSeverity.Medium,
                     fileName,
                     key);
             }

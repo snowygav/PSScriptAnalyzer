@@ -126,7 +126,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                          functionDefinitionAst.Name),
                      Helper.Instance.GetScriptExtentForFunctionName(functionDefinitionAst),
                      GetName(),
-                     DiagnosticSeverity.Error,
+                     DiagnosticSeverity.Critical,
                      fileName);
                 }
             }
@@ -186,7 +186,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Error;
+            return RuleSeverity.Critical;
         }
 
         /// <summary>

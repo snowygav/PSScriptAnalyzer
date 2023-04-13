@@ -57,7 +57,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         string.Format(CultureInfo.CurrentCulture, Strings.MisleadingBacktickError),
                             extent,
                             GetName(),
-                            DiagnosticSeverity.Warning,
+                            DiagnosticSeverity.Medium,
                             fileName,
                             suggestedCorrections: GetCorrectionExtent(extent));
                 }
@@ -125,7 +125,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Warning;
+            return RuleSeverity.Medium;
         }
 
         /// <summary>
