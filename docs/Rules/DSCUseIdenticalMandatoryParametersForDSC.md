@@ -7,7 +7,7 @@ title: DSCUseIdenticalMandatoryParametersForDSC
 ---
 # UseIdenticalMandatoryParametersForDSC
 
-**Severity Level: Error**
+**Severity Level: Critical**
 
 ## Description
 

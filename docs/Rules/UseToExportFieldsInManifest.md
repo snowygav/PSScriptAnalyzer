@@ -7,7 +7,7 @@ title: UseToExportFieldsInManifest
 ---
 # UseToExportFieldsInManifest
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

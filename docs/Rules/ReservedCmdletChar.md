@@ -7,7 +7,7 @@ title: ReservedCmdletChar
 ---
 # ReservedCmdletChar
 
-**Severity Level: Error**
+**Severity Level: Critical**
 
 ## Description
 

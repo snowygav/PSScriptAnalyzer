@@ -7,7 +7,7 @@ title: UseUTF8EncodingForHelpFile
 ---
 # UseUTF8EncodingForHelpFile
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

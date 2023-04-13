@@ -7,7 +7,7 @@ title: UseCompatibleTypes
 ---
 # UseCompatibleTypes
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

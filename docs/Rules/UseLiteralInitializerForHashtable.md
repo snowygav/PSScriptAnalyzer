@@ -7,7 +7,7 @@ title: UseLiteralInitializerForHashtable
 ---
 # UseLiteralInitializerForHashtable
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

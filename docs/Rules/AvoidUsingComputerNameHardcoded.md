@@ -7,7 +7,7 @@ title: AvoidUsingComputerNameHardcoded
 ---
 # AvoidUsingComputerNameHardcoded
 
-**Severity Level: Error**
+**Severity Level: Critical**
 
 ## Description
 

@@ -7,7 +7,7 @@ title: MissingModuleManifestField
 ---
 # MissingModuleManifestField
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

@@ -7,7 +7,7 @@ title: UseCompatibleCommands
 ---
 # UseCompatibleCommands
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

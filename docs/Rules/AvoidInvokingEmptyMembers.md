@@ -7,7 +7,7 @@ title: AvoidInvokingEmptyMembers
 ---
 # AvoidInvokingEmptyMembers
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

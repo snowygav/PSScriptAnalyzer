@@ -7,7 +7,7 @@ title: UseCmdletCorrectly
 ---
 # UseCmdletCorrectly
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

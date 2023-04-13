@@ -7,7 +7,7 @@ title: UseProcessBlockForPipelineCommand
 ---
 # UseProcessBlockForPipelineCommand
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

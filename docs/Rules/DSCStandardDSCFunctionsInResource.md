@@ -7,7 +7,7 @@ title: DSCStandardDSCFunctionsInResource
 ---
 # StandardDSCFunctionsInResource
 
-**Severity Level: Error**
+**Severity Level: Critical**
 
 ## Description
 

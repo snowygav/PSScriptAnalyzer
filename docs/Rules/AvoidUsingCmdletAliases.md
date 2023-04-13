@@ -7,7 +7,7 @@ title: AvoidUsingCmdletAliases
 ---
 # AvoidUsingCmdletAliases
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

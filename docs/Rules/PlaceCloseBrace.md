@@ -7,7 +7,7 @@ title: PlaceCloseBrace
 ---
 # PlaceCloseBrace
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

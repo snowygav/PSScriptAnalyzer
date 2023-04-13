@@ -7,7 +7,7 @@ title: UseSingularNouns
 ---
 # UseSingularNouns
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

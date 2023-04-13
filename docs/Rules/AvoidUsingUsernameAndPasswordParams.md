@@ -7,7 +7,7 @@ title: AvoidUsingUsernameAndPasswordParams
 ---
 # AvoidUsingUsernameAndPasswordParams
 
-**Severity Level: Error**
+**Severity Level: Critical**
 
 ## Description
 

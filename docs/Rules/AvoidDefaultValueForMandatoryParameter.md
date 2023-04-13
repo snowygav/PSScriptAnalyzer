@@ -7,7 +7,7 @@ title: AvoidDefaultValueForMandatoryParameter
 ---
 # AvoidDefaultValueForMandatoryParameter
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

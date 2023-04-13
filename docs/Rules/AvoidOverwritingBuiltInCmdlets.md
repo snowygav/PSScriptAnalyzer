@@ -7,7 +7,7 @@ title: AvoidOverwritingBuiltInCmdlets
 ---
 # AvoidOverwritingBuiltInCmdlets
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

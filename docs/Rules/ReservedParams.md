@@ -7,7 +7,7 @@ title: ReservedParams
 ---
 # ReservedParams
 
-**Severity Level: Error**
+**Severity Level: Critical**
 
 ## Description
 

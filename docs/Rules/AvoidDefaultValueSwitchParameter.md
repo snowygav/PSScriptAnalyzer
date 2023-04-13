@@ -7,7 +7,7 @@ title: AvoidDefaultValueSwitchParameter
 ---
 # AvoidDefaultValueSwitchParameter
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

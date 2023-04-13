@@ -7,7 +7,7 @@ title: UseConsistentWhitespace
 ---
 # UseConsistentWhitespace
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

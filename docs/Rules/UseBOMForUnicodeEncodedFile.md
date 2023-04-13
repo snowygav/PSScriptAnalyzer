@@ -7,7 +7,7 @@ title: UseBOMForUnicodeEncodedFile
 ---
 # UseBOMForUnicodeEncodedFile
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

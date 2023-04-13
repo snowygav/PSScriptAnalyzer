@@ -7,7 +7,7 @@ title: AvoidGlobalVars
 ---
 # AvoidGlobalVars
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

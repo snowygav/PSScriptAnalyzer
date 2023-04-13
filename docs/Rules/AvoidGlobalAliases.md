@@ -7,7 +7,7 @@ title: AvoidGlobalAliases
 ---
 # AvoidGlobalAliases
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

@@ -7,7 +7,7 @@ title: AvoidSemicolonsAsLineTerminators
 ---
 # AvoidSemicolonsAsLineTerminators
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

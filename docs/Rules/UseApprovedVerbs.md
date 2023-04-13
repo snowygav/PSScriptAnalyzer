@@ -7,7 +7,7 @@ title: UseApprovedVerbs
 ---
 # UseApprovedVerbs
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

@@ -7,7 +7,7 @@ title: AlignAssignmentStatement
 ---
 # AlignAssignmentStatement
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

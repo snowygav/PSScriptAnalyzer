@@ -7,7 +7,7 @@ title: AvoidUsingEmptyCatchBlock
 ---
 # AvoidUsingEmptyCatchBlock
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

@@ -7,7 +7,7 @@ title: UseCompatibleCmdlets
 ---
 # UseCompatibleCmdlets
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

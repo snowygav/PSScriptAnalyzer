@@ -84,7 +84,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
         public abstract  SourceType GetSourceType();
 
         /// <summary>
-        /// GetSeverity: Retrieves the severity of the rule: error, warning of information.
+        /// GetSeverity: Retrieves the severity of the rule: critical, high, medium or information.
         /// </summary>
         /// <returns></returns>
         public abstract RuleSeverity GetSeverity();

@@ -7,7 +7,7 @@ title: UsePSCredentialType
 ---
 # UsePSCredentialType
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

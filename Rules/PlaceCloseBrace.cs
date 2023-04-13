@@ -185,7 +185,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         }
 
         /// <summary>
-        /// Retrieves the severity of the rule: error, warning or information.
+        /// Retrieves the severity of the rule: critical, high, medium or information.
         /// </summary>
         public override RuleSeverity GetSeverity()
         {
@@ -193,7 +193,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         }
 
         /// <summary>
-        /// Gets the severity of the returned diagnostic record: error, warning, or information.
+        /// Gets the severity of the returned diagnostic record: critical, high, medium or information.
         /// </summary>
         /// <returns></returns>
         public DiagnosticSeverity GetDiagnosticSeverity()

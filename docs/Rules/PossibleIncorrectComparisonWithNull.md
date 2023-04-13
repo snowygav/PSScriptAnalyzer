@@ -7,7 +7,7 @@ title: PossibleIncorrectComparisonWithNull
 ---
 # PossibleIncorrectComparisonWithNull
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

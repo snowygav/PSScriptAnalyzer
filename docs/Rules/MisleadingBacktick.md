@@ -7,7 +7,7 @@ title: MisleadingBacktick
 ---
 # MisleadingBacktick
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

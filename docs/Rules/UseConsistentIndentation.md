@@ -7,7 +7,7 @@ title: UseConsistentIndentation
 ---
 # UseConsistentIndentation
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

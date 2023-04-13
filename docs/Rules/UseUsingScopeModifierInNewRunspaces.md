@@ -7,7 +7,7 @@ title: UseUsingScopeModifierInNewRunspaces
 ---
 # UseUsingScopeModifierInNewRunspaces
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

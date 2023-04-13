@@ -7,7 +7,7 @@ title: UseSupportsShouldProcess
 ---
 # UseSupportsShouldProcess
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

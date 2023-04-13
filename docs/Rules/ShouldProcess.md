@@ -7,7 +7,7 @@ title: ShouldProcess
 ---
 # ShouldProcess
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 

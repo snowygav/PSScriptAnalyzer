@@ -7,7 +7,7 @@ title: AvoidUsingConvertToSecureStringWithPlainText
 ---
 # AvoidUsingConvertToSecureStringWithPlainText
 
-**Severity Level: Error**
+**Severity Level: Critical**
 
 ## Description
 

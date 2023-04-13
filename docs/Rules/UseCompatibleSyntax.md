@@ -7,7 +7,7 @@ title: UseCompatibleSyntax
 ---
 # UseCompatibleSyntax
 
-**Severity Level: Warning**
+**Severity Level: Medium**
 
 ## Description
 
