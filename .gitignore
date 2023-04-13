@@ -224,3 +224,5 @@ PSCompatibilityCollector/out/
 
 # Explicitely Include test dir
 !/Tests/**
+
+.fake
