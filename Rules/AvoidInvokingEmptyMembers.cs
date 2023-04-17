@@ -49,7 +49,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                         string.Format(CultureInfo.CurrentCulture,
                                             Strings.AvoidInvokingEmptyMembersError,
                                             context),
-                                        member.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
+                                        member.Extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
                             }
                         }
                     }

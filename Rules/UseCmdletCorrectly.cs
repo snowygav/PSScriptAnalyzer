@@ -71,7 +71,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 if (!MandatoryParameterExists(cmdAst))
                 {
                     yield return new DiagnosticRecord(String.Format(CultureInfo.CurrentCulture, Strings.UseCmdletCorrectlyError, cmdAst.GetCommandName()),
-                        cmdAst.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
+                        cmdAst.Extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
                 }
             }
         }

@@ -42,7 +42,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     if (reader.CurrentEncoding != System.Text.Encoding.UTF8)
                     {
                         yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.UseUTF8EncodingForHelpFileError, System.IO.Path.GetFileName(fileName), reader.CurrentEncoding),
-                            null, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
+                            null, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
                     }
                 }
             }

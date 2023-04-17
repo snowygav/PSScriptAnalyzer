@@ -38,7 +38,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 {
                     if (IncorrectComparisonWithNull(binExpressionAst, ast))
                     {
-                        yield return new DiagnosticRecord(Strings.PossibleIncorrectComparisonWithNullError, binExpressionAst.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName,
+                        yield return new DiagnosticRecord(Strings.PossibleIncorrectComparisonWithNullError, binExpressionAst.Extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName,
                             null, suggestedCorrections: GetCorrectionExtent(binExpressionAst));
                     }
                 }
@@ -61,7 +61,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 {
                     if (IncorrectComparisonWithNull(binAst, funcAst))
                     {
-                        yield return new DiagnosticRecord(Strings.PossibleIncorrectComparisonWithNullError, binAst.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName,
+                        yield return new DiagnosticRecord(Strings.PossibleIncorrectComparisonWithNullError, binAst.Extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName,
                             null, suggestedCorrections: GetCorrectionExtent(binAst));
                     }
                 }

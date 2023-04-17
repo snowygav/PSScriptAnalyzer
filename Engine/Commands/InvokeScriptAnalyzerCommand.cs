@@ -487,7 +487,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Commands
                         case DiagnosticSeverity.Information:
                             infoCount++;
                             break;
-                        case DiagnosticSeverity.MediumXXX:
+                        case DiagnosticSeverity.Medium:
                             warningCount++;
                             break;
                         case DiagnosticSeverity.Critical:
@@ -511,7 +511,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Commands
                     else
                     {
                         var pluralS = numberOfRuleViolations > 1 ? "s" : string.Empty;
-                        var message = $"{numberOfRuleViolations} rule violation{pluralS} found.    Severity distribution:  {DiagnosticSeverity.Critical} = {errorCount}, {DiagnosticSeverity.MediumXXX} = {warningCount}, {DiagnosticSeverity.Information} = {infoCount}";
+                        var message = $"{numberOfRuleViolations} rule violation{pluralS} found.    Severity distribution:  {DiagnosticSeverity.Critical} = {errorCount}, {DiagnosticSeverity.Medium} = {warningCount}, {DiagnosticSeverity.Information} = {infoCount}";
                         if (warningCount + errorCount == 0)
                         {
                             ConsoleHostHelper.DisplayMessageUsingSystemProperties(Host, "WarningForegroundColor", "WarningBackgroundColor", message);

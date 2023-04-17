@@ -63,7 +63,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                 string.Format(CultureInfo.CurrentCulture, Strings.AvoidGlobalFunctionsError),
                                 functionNameExtent,
                                 GetName(),
-                                DiagnosticSeverity.MediumXXX,
+                                DiagnosticSeverity.Medium,
                                 GetCategory(), 
                                 fileName,
                                 functionDefinitionAst.Name));

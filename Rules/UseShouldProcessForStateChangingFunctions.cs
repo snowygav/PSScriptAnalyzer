@@ -39,7 +39,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     string.Format(CultureInfo.CurrentCulture, Strings.UseShouldProcessForStateChangingFunctionsError, funcDefAst.Name), 
                     Helper.Instance.GetScriptExtentForFunctionName(funcDefAst),                    
                     this.GetName(), 
-                    DiagnosticSeverity.MediumXXX, 
+                    DiagnosticSeverity.Medium, 
                     GetCategory(),
                     fileName);
             }

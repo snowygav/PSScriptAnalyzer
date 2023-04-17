@@ -43,7 +43,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         String.Format(CultureInfo.CurrentCulture, Strings.AvoidMultipleTypeAttributesError, paramAst.Name),
                         paramAst.Name.Extent,
                         GetName(), 
-                        DiagnosticSeverity.MediumXXX, 
+                        DiagnosticSeverity.Medium, 
                         GetCategory(), 
                         fileName);
                 }

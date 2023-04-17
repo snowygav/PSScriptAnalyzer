@@ -71,7 +71,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                          string.Format(CultureInfo.CurrentCulture, Strings.AvoidGlobalAliasesError),
                                          commandAst.Extent,
                                          GetName(),
-                                         DiagnosticSeverity.MediumXXX,
+                                         DiagnosticSeverity.Medium,
                                          GetCategory(), 
                                          fileName));
                     }

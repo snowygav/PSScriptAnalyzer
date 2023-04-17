@@ -68,13 +68,13 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         {
                             yield return new DiagnosticRecord(
                                 String.Format(CultureInfo.CurrentCulture, Strings.AvoidShouldContinueWithoutForceErrorScriptDefinition, funcAst.Name),
-                                imeAst.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
+                                imeAst.Extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
                         }
                         else
                         {
                             yield return new DiagnosticRecord(
                                 String.Format(CultureInfo.CurrentCulture, Strings.AvoidShouldContinueWithoutForceError, funcAst.Name,
-                                System.IO.Path.GetFileName(fileName)), imeAst.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
+                                System.IO.Path.GetFileName(fileName)), imeAst.Extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
                         }
                     }
                 }

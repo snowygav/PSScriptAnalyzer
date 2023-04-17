@@ -107,7 +107,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         private class SyntaxCompatibilityVisitor : AstVisitor
 #endif
         {
-            private const DiagnosticSeverity Severity = DiagnosticSeverity.MediumXXX;
+            private const DiagnosticSeverity Severity = DiagnosticSeverity.Medium;
 
             private static readonly string[] s_dscScriptResourceCommandNames = {"GetScript", "TestScript", "SetScript"};
 

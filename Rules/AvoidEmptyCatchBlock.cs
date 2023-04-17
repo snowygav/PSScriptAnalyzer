@@ -38,7 +38,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 if (catchAst.Body.Statements.Count == 0)
                 {
                     yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.AvoidEmptyCatchBlockError),
-                        catchAst.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
+                        catchAst.Extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
                 }
             }
         }

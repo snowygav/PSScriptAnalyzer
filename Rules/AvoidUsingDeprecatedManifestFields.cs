@@ -110,7 +110,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                 yield return
                                     new DiagnosticRecord(
                                         String.Format(CultureInfo.CurrentCulture, warning.BaseObject.ToString()), ast.Extent,
-                                        GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
+                                        GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
                             }
                         }
                     }

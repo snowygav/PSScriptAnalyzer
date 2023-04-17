@@ -64,7 +64,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         string.Format(CultureInfo.CurrentCulture, Strings.ReviewUnusedParameterError, parameterAst.Name.VariablePath.UserPath),
                         parameterAst.Name.Extent,
                         GetName(),
-                        DiagnosticSeverity.MediumXXX,
+                        DiagnosticSeverity.Medium,
                         GetCategory(), 
                         fileName,
                         parameterAst.Name.VariablePath.UserPath

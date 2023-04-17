@@ -73,7 +73,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         if (paramAst.DefaultValue != null)
                         {
                             yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.AvoidDefaultValueForMandatoryParameterError, paramAst.Name.VariablePath.UserPath),
-                            paramAst.Name.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName, paramAst.Name.VariablePath.UserPath);
+                            paramAst.Name.Extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName, paramAst.Name.VariablePath.UserPath);
                         }
                     }
                 }

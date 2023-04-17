@@ -57,7 +57,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         string.Format(CultureInfo.CurrentCulture, Strings.MisleadingBacktickError),
                             extent,
                             GetName(),
-                            DiagnosticSeverity.MediumXXX,
+                            DiagnosticSeverity.Medium,
                             GetCategory(), 
                             fileName,
                             suggestedCorrections: GetCorrectionExtent(extent));

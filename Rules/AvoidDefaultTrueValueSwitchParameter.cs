@@ -41,13 +41,13 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     {
                         yield return new DiagnosticRecord(
                             String.Format(CultureInfo.CurrentCulture, Strings.AvoidDefaultValueSwitchParameterErrorScriptDefinition),
-                            paramAst.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
+                            paramAst.Extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
                     }
                     else
                     {
                         yield return new DiagnosticRecord(
                             String.Format(CultureInfo.CurrentCulture, Strings.AvoidDefaultValueSwitchParameterError, System.IO.Path.GetFileName(fileName)),
-                            paramAst.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
+                            paramAst.Extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
                     }
                 }
             }

@@ -54,7 +54,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     if (funcName != null && funcName.Intersect(reservedChars).Count() > 0 && (exportedFunction.Contains(funcAst.Name) || exportedFunction.Contains(funcName)))
                     {
                         yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.ReservedCmdletCharError, funcAst.Name),
-                            funcAst.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
+                            funcAst.Extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
                     }                
                 }
             }            

@@ -158,7 +158,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
         /// <summary>
         /// MEDIUM: This warning may cause a problem or does not follow PowerShell's recommended guidelines.
         /// </summary>
-        MediumXXX = 1,
+        Medium = 1,
 
         /// <summary>
         /// HIGH: This warning is likely to cause a problem or does not follow PowerShell's required guidelines.

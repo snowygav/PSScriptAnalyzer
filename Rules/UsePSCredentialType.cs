@@ -120,7 +120,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                             errorMessage,
                             parameter.Extent,
                             GetName(),
-                            DiagnosticSeverity.MediumXXX,
+                            DiagnosticSeverity.Medium,
                             GetCategory(),
                             fileName);
                     }

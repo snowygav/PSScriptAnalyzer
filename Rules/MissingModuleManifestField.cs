@@ -59,7 +59,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                 errorRecord.Exception.Message, 
                                 hashTableAst.Extent, 
                                 GetName(), 
-                                DiagnosticSeverity.MediumXXX, 
+                                DiagnosticSeverity.Medium, 
                                 GetCategory(), 
                                 fileName,
                                 suggestedCorrections:GetCorrectionExtent(hashTableAst as HashtableAst));

@@ -86,7 +86,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         string.Format(CultureInfo.CurrentCulture, Strings.UseSingularNounsError, funcAst.Name),
                         extent,
                         GetName(),
-                        DiagnosticSeverity.MediumXXX,
+                        DiagnosticSeverity.Medium,
                         GetCategory(),
                         fileName,
                         suggestedCorrections: new CorrectionExtent[] { GetCorrection(pluralizer, extent, funcAst.Name, noun) });

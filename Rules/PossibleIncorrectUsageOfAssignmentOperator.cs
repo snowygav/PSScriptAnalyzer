@@ -67,7 +67,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
             {
                 return new DiagnosticRecord(
                     Strings.PossibleIncorrectUsageOfAssignmentOperatorError, assignmentStatementAst.ErrorPosition,
-                    GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
+                    GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
             }
 
             // Check if LHS is $null and then always warn
@@ -77,7 +77,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 {
                     return new DiagnosticRecord(
                         Strings.PossibleIncorrectUsageOfAssignmentOperatorError, assignmentStatementAst.ErrorPosition,
-                        GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
+                        GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
                 }
             }
 

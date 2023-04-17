@@ -64,7 +64,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                             extent = funcAst.Extent;
                         }
                         yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.UseApprovedVerbsError, funcName),
-                            extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
+                            extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
                     }
                 }
             }

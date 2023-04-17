@@ -516,7 +516,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public DiagnosticSeverity GetDiagnosticSeverity()
         {
-            return DiagnosticSeverity.MediumXXX;
+            return DiagnosticSeverity.Medium;
         }
     }
 }

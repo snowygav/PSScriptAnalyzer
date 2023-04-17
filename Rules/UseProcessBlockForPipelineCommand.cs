@@ -55,7 +55,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                 string.Format(CultureInfo.CurrentCulture, Strings.UseProcessBlockForPipelineCommandError, paramAst.Name.VariablePath.UserPath),
                                 paramAst.Name.Extent,
                                 GetName(),
-                                DiagnosticSeverity.MediumXXX,
+                                DiagnosticSeverity.Medium,
                                 GetCategory(),
                                 fileName,
                                 paramAst.Name.VariablePath.UserPath

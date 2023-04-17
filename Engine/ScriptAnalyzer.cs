@@ -1647,7 +1647,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer
                 : null;
             DiagnosticSeverity severity = psObject.TryGetPropertyValue("Severity", out object severityValue)
                 ? LanguagePrimitives.ConvertTo<DiagnosticSeverity>(severityValue)
-                : DiagnosticSeverity.MediumXXX;
+                : DiagnosticSeverity.Medium;
             RuleCategory category =psObject.TryGetPropertyValue("Category", out object categoryValue)
                 ? LanguagePrimitives.ConvertTo<RuleCategory>(categoryValue)
                 : RuleCategory.GeneralCodingPractices;

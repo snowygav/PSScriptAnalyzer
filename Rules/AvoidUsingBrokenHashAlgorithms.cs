@@ -178,7 +178,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public override DiagnosticSeverity GetDiagnosticSeverity()
         {
-            return DiagnosticSeverity.MediumXXX;
+            return DiagnosticSeverity.Medium;
         }
 
         /// <summary>

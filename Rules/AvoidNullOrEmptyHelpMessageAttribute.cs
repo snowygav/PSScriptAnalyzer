@@ -86,7 +86,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                 yield return new DiagnosticRecord(message,
                                                                     paramAst.Extent, 
                                                                     GetName(), 
-                                                                    DiagnosticSeverity.MediumXXX, 
+                                                                    DiagnosticSeverity.Medium, 
                                                                     GetCategory(), 
                                                                     fileName, 
                                                                     paramAst.Name.VariablePath.UserPath);

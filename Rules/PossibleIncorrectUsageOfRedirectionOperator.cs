@@ -38,7 +38,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     {
                         yield return new DiagnosticRecord(
                             Strings.PossibleIncorrectUsageOfRedirectionOperatorError, fileRedirectionAst.Extent,
-                            GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
+                            GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
                     }
                 }
             }
