@@ -62,20 +62,20 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 if (_readOnlyAutomaticVariables.Contains(variableName, StringComparer.OrdinalIgnoreCase))
                 {
                     yield return new DiagnosticRecord(DiagnosticRecordHelper.FormatError(Strings.AvoidAssignmentToReadOnlyAutomaticVariableError, variableName),
-                                                      variableExpressionAst.Extent, GetName(), DiagnosticSeverity.Critical, fileName);
+                                                      variableExpressionAst.Extent, GetName(), DiagnosticSeverity.Critical, GetCategory(), fileName);
                 }
 
                 if (_readOnlyAutomaticVariablesIntroducedInVersion6_0.Contains(variableName, StringComparer.OrdinalIgnoreCase))
                 {
-                    var severity = IsPowerShellVersion6OrGreater() ? DiagnosticSeverity.Critical : DiagnosticSeverity.Medium;
+                    var severity = IsPowerShellVersion6OrGreater() ? DiagnosticSeverity.Critical : DiagnosticSeverity.MediumXXX;
                     yield return new DiagnosticRecord(DiagnosticRecordHelper.FormatError(Strings.AvoidAssignmentToReadOnlyAutomaticVariableIntroducedInPowerShell6_0Error, variableName),
-                                                      variableExpressionAst.Extent, GetName(), severity, fileName);
+                                                      variableExpressionAst.Extent, GetName(), severity, GetCategory(), fileName);
                 }
 
                 if (_writableAutomaticVariables.Contains(variableName, StringComparer.OrdinalIgnoreCase))
                 {
                     yield return new DiagnosticRecord(DiagnosticRecordHelper.FormatError(Strings.AvoidAssignmentToWritableAutomaticVariableError, variableName),
-                                                      variableExpressionAst.Extent, GetName(), DiagnosticSeverity.Medium, fileName);
+                                                      variableExpressionAst.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
                 }
             }
 
@@ -93,20 +93,20 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 if (_readOnlyAutomaticVariables.Contains(variableName, StringComparer.OrdinalIgnoreCase))
                 {
                     yield return new DiagnosticRecord(DiagnosticRecordHelper.FormatError(Strings.AvoidAssignmentToReadOnlyAutomaticVariableError, variableName),
-                                                      variableExpressionAst.Extent, GetName(), DiagnosticSeverity.Critical, fileName);
+                                                      variableExpressionAst.Extent, GetName(), DiagnosticSeverity.Critical, GetCategory(), fileName);
                 }
 
                 if (_readOnlyAutomaticVariablesIntroducedInVersion6_0.Contains(variableName, StringComparer.OrdinalIgnoreCase))
                 {
-                    var severity = IsPowerShellVersion6OrGreater() ? DiagnosticSeverity.Critical : DiagnosticSeverity.Medium;
+                    var severity = IsPowerShellVersion6OrGreater() ? DiagnosticSeverity.Critical : DiagnosticSeverity.MediumXXX;
                     yield return new DiagnosticRecord(DiagnosticRecordHelper.FormatError(Strings.AvoidAssignmentToReadOnlyAutomaticVariableIntroducedInPowerShell6_0Error, variableName),
-                                                      variableExpressionAst.Extent, GetName(), severity, fileName);
+                                                      variableExpressionAst.Extent, GetName(), severity, GetCategory(),fileName);
                 }
 
                 if (_writableAutomaticVariables.Contains(variableName, StringComparer.OrdinalIgnoreCase))
                 {
                     yield return new DiagnosticRecord(DiagnosticRecordHelper.FormatError(Strings.AvoidAssignmentToWritableAutomaticVariableError, variableName),
-                                                      variableExpressionAst.Extent, GetName(), DiagnosticSeverity.Medium, fileName);
+                                                      variableExpressionAst.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
                 }
             }
         }
@@ -163,6 +163,15 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         public RuleSeverity GetSeverity()
         {
             return RuleSeverity.Medium;
+        }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
         }
 
         /// <summary>

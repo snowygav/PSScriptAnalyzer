@@ -73,7 +73,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         if (parent.PipelineElements[0] == cmdAst && !CommandAllowList.Contains(commandName, StringComparer.OrdinalIgnoreCase))
                         {
                             yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.AvoidUsingPositionalParametersError, commandName),
-                                cmdAst.Extent, GetName(), DiagnosticSeverity.Information, fileName, commandName);
+                                cmdAst.Extent, GetName(), DiagnosticSeverity.Information, GetCategory(), fileName, commandName);
                         }
                     }
                     // not in pipeline so just raise it normally
@@ -82,7 +82,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         if (!CommandAllowList.Contains(commandName, StringComparer.OrdinalIgnoreCase))
                         {
                             yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.AvoidUsingPositionalParametersError, commandName),
-                                cmdAst.Extent, GetName(), DiagnosticSeverity.Information, fileName, commandName);
+                                cmdAst.Extent, GetName(), DiagnosticSeverity.Information, GetCategory(), fileName, commandName);
                         }
                     }
                 }
@@ -132,6 +132,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         {
             return RuleSeverity.Information;
         }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public override RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+        
 
         /// <summary>
         /// Method: Retrieves the module/assembly name the rule is from.

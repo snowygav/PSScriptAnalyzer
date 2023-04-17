@@ -76,12 +76,12 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 if (String.IsNullOrWhiteSpace(fileName))
                 {
                     records.Add(new DiagnosticRecord(String.Format(CultureInfo.CurrentCulture, Strings.AvoidUsingWriteHostErrorScriptDefinition),
-                        cmdAst.Extent, GetName(), DiagnosticSeverity.Medium, fileName));
+                        cmdAst.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName));
                 }
                 else
                 {
                     records.Add(new DiagnosticRecord(String.Format(CultureInfo.CurrentCulture, Strings.AvoidUsingWriteHostError,
-                        System.IO.Path.GetFileName(fileName)), cmdAst.Extent, GetName(), DiagnosticSeverity.Medium, fileName));
+                        System.IO.Path.GetFileName(fileName)), cmdAst.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName));
                 }
             }
 
@@ -107,7 +107,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
             {
                 records.Add(new DiagnosticRecord(String.Format(CultureInfo.CurrentCulture, Strings.AvoidUsingConsoleWriteError,
                     String.IsNullOrWhiteSpace(fileName) ? Strings.ScriptDefinitionName : System.IO.Path.GetFileName(fileName), imeAst.Member.Extent.Text),
-                    imeAst.Extent, GetName(), DiagnosticSeverity.Medium, fileName));
+                    imeAst.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName));
             }
 
             return AstVisitAction.Continue;
@@ -156,6 +156,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         {
             return RuleSeverity.Medium;
         }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.ErrorHandlingandLogging;
+        }
+        
 
         /// <summary>
         /// GetSourceName: Retrieves the module/assembly name the rule is from.

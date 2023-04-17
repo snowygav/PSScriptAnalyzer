@@ -44,5 +44,11 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
         /// <returns></returns>
         RuleSeverity GetSeverity();
 
+        /// <summary>
+        /// GetCategory: Retrieves category of the rule.
+        /// </summary>
+        /// <returns></returns>
+        RuleCategory GetCategory();
+
     }
 }

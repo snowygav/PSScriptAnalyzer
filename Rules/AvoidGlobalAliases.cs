@@ -71,7 +71,8 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                          string.Format(CultureInfo.CurrentCulture, Strings.AvoidGlobalAliasesError),
                                          commandAst.Extent,
                                          GetName(),
-                                         DiagnosticSeverity.Medium,
+                                         DiagnosticSeverity.MediumXXX,
+                                         GetCategory(), 
                                          fileName));
                     }
                 }
@@ -125,6 +126,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         {
             return RuleSeverity.Medium;
         }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+        
 
         public string GetSourceName()
         {

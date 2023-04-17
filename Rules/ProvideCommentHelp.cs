@@ -108,6 +108,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         Helper.Instance.GetScriptExtentForFunctionName(functionDefinitionAst),
                         GetName(),
                         GetDiagnosticSeverity(),
+                        GetCategory(), 
                         fileName,
                         null,
                         GetCorrection(ast, functionDefinitionAst).ToList());
@@ -157,6 +158,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         {
             return RuleSeverity.Information;
         }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public override RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+        
 
         /// <summary>
         /// Method: Retrieves the module/assembly name the rule is from.

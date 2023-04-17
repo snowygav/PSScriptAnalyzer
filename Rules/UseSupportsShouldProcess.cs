@@ -93,6 +93,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         scriptExtent,
                         GetName(),
                         GetDiagnosticSeverity(),
+                        GetCategory(),
                         scriptExtent.File,
                         null,
                         GetCorrections(whatIfIndex, confirmIndex, parameterAsts, paramBlockAst, functionDefinitionAst)));
@@ -500,12 +501,22 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         }
 
         /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+        
+
+        /// <summary>
         /// Gets the severity of the returned diagnostic record: critical, high, medium or information.
         /// </summary>
         /// <returns></returns>
         public DiagnosticSeverity GetDiagnosticSeverity()
         {
-            return DiagnosticSeverity.Medium;
+            return DiagnosticSeverity.MediumXXX;
         }
     }
 }

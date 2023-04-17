@@ -36,7 +36,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
 
                 if (cmdletNameAndAliases.Contains(cmdAst.GetCommandName(), StringComparer.OrdinalIgnoreCase))
                 {
-                    yield return new DiagnosticRecord(GetError(fileName), cmdAst.Extent, GetName(), GetDiagnosticSeverity(), fileName);
+                    yield return new DiagnosticRecord(GetError(fileName), cmdAst.Extent, GetName(), GetDiagnosticSeverity(), GetCategory(), fileName);
                 }
             }
         }
@@ -90,9 +90,17 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
         public abstract RuleSeverity GetSeverity();
 
         /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+
+        public abstract RuleCategory GetCategory();
+
+        /// <summary>
         /// DiagnosticSeverity: Returns the severity of the rule of type DiagnosticSeverity
         /// </summary>
         /// <returns></returns>
+        
         public abstract DiagnosticSeverity GetDiagnosticSeverity();
     }
 }

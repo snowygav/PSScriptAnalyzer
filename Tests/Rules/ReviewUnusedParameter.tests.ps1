@@ -4,7 +4,7 @@
 Describe "ReviewUnusedParameter" {
     BeforeAll {
         $RuleName = 'PSReviewUnusedParameter'
-        $RuleSeverity = "Warning"
+        $RuleSeverity = "Medium"
     }
 
     Context "When there are violations" {

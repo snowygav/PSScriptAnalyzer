@@ -98,6 +98,12 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
         public abstract RuleSeverity GetSeverity();
 
         /// <summary>
+        /// Retrieves category of the rule.
+        /// </summary>
+        /// <returns>The category of the rule.</returns>
+        public abstract RuleCategory GetCategory();
+
+        /// <summary>
         /// Retrieves the source name of the rule.
         /// </summary>
         /// <returns>The source name of the rule.</returns>

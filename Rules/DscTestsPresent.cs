@@ -61,7 +61,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
             if (!testsPresent)
             {
                 yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.DscTestsPresentNoTestsError, resourceName),
-                            ast.Extent, GetName(), DiagnosticSeverity.Information, fileName);
+                            ast.Extent, GetName(), DiagnosticSeverity.Information, GetCategory(), fileName);
             }
         }
 
@@ -111,7 +111,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 if (!testsPresent)
                 {
                     yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.DscTestsPresentNoTestsError, resourceName),
-                                dscClass.Extent, GetName(), DiagnosticSeverity.Information, fileName);
+                                dscClass.Extent, GetName(), DiagnosticSeverity.Information, GetCategory(), fileName);
                 }
             }
         }
@@ -161,6 +161,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         {
             return RuleSeverity.Information;
         }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+        
 
         /// <summary>
         /// GetSourceName: Retrieves the module/assembly name the rule is from.

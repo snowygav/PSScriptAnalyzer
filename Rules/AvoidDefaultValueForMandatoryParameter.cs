@@ -73,7 +73,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         if (paramAst.DefaultValue != null)
                         {
                             yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.AvoidDefaultValueForMandatoryParameterError, paramAst.Name.VariablePath.UserPath),
-                            paramAst.Name.Extent, GetName(), DiagnosticSeverity.Medium, fileName, paramAst.Name.VariablePath.UserPath);
+                            paramAst.Name.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName, paramAst.Name.VariablePath.UserPath);
                         }
                     }
                 }
@@ -124,6 +124,15 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
             return RuleSeverity.Medium;
         }
 
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+        
         /// <summary>
         /// Method: Retrieves the module/assembly name the rule is from.
         /// </summary>

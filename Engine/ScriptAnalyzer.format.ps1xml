@@ -17,6 +17,10 @@
           <Label>Severity</Label>
         </TableColumnHeader>
         <TableColumnHeader>
+          <Width>12</Width>
+          <Label>Category</Label>
+        </TableColumnHeader>
+        <TableColumnHeader>
           <Width>10</Width>
           <Label>ScriptName</Label>
         </TableColumnHeader>
@@ -38,6 +42,9 @@
             </TableColumnItem>
             <TableColumnItem>
               <PropertyName>Severity</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>Category</PropertyName>
             </TableColumnItem>
             <TableColumnItem>
               <PropertyName>ScriptName</PropertyName>
@@ -70,6 +77,10 @@
           <Label>Severity</Label>
         </TableColumnHeader>
         <TableColumnHeader>
+          <Width>12</Width>
+          <Label>Category</Label>
+        </TableColumnHeader>
+        <TableColumnHeader>
           <Width>10</Width>
           <Label>ScriptName</Label>
         </TableColumnHeader>
@@ -91,6 +102,9 @@
             </TableColumnItem>
             <TableColumnItem>
               <PropertyName>Severity</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>Category</PropertyName>
             </TableColumnItem>
             <TableColumnItem>
               <PropertyName>ScriptName</PropertyName>
@@ -123,6 +137,10 @@
           <Label>Severity</Label>
         </TableColumnHeader>
         <TableColumnHeader>
+          <Width>15</Width>
+          <Label>Category</Label>
+        </TableColumnHeader>
+        <TableColumnHeader>
           <Width>60</Width>
           <Label>Description</Label>
         </TableColumnHeader>
@@ -140,6 +158,9 @@
             </TableColumnItem>
             <TableColumnItem>
               <PropertyName>Severity</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>Category</PropertyName>
             </TableColumnItem>
             <TableColumnItem>
               <PropertyName>Description</PropertyName>

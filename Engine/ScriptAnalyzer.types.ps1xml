@@ -23,6 +23,7 @@
             <ReferencedProperties>
               <Name>RuleName</Name>
               <Name>Severity</Name>
+              <Name>Category</Name>
               <Name>Line</Name>
               <Name>Column</Name>
               <Name>Message</Name>
@@ -61,6 +62,7 @@
             <ReferencedProperties>
               <Name>RuleName</Name>
               <Name>Severity</Name>
+              <Name>Category</Name>
               <Name>Line</Name>
               <Name>Column</Name>
               <Name>Justification</Name>
@@ -81,6 +83,7 @@
             <ReferencedProperties>
               <Name>Name</Name>
               <Name>Severity</Name>
+              <Name>Category</Name>
               <Name>Description</Name>
               <Name>SourceName</Name>
             </ReferencedProperties>

@@ -1521,6 +1521,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer
                         parseError.Extent,
                         parseError.ErrorId.ToString(),
                         DiagnosticSeverity.ParseError,
+                        RuleCategory.GeneralCodingPractices,
                         String.Empty // no script file
                         )
                         );
@@ -1646,7 +1647,10 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer
                 : null;
             DiagnosticSeverity severity = psObject.TryGetPropertyValue("Severity", out object severityValue)
                 ? LanguagePrimitives.ConvertTo<DiagnosticSeverity>(severityValue)
-                : DiagnosticSeverity.Medium;
+                : DiagnosticSeverity.MediumXXX;
+            RuleCategory category =psObject.TryGetPropertyValue("Category", out object categoryValue)
+                ? LanguagePrimitives.ConvertTo<RuleCategory>(categoryValue)
+                : RuleCategory.GeneralCodingPractices;
 
             bool isValid = true;
             isValid &= CheckHasRequiredProperty("Message", message);
@@ -1669,7 +1673,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer
                 return false;
             }
 
-            diagnostic = new DiagnosticRecord(message, (IScriptExtent)extentValue, ruleName, severity, filePath, ruleSuppressionID, suggestedCorrections);
+            diagnostic = new DiagnosticRecord(message, (IScriptExtent)extentValue, ruleName, severity, category, filePath, ruleSuppressionID, suggestedCorrections);
             return true;
         }
 
@@ -1718,7 +1722,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer
                 else
                 {
                     diagnosticRecords.Add(new DiagnosticRecord(
-                        string.Format(Strings.TypeNotFoundParseErrorFound, parseError.Extent), parseError.Extent, "TypeNotFound", DiagnosticSeverity.Information, parseError.Extent.File));
+                        string.Format(Strings.TypeNotFoundParseErrorFound, parseError.Extent), parseError.Extent, "TypeNotFound", DiagnosticSeverity.Information, RuleCategory.GeneralCodingPractices, parseError.Extent.File));
                 }
             }
 
@@ -1936,6 +1940,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer
                             parseError.Extent,
                             parseError.ErrorId.ToString(),
                             DiagnosticSeverity.ParseError,
+                            RuleCategory.GeneralCodingPractices,
                             filePath)
                         );
                 }
@@ -1957,6 +1962,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer
                 || (allowedSeverities != null
                     && rule != null
                     && HasGetSeverity(rule)
+                    && HasGetCategory(rule)
                     && allowedSeverities.Contains((uint)rule.GetSeverity()));
         }
 
@@ -1973,6 +1979,13 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer
                 : null;
         }
 
+        IEnumerable<uint> GetAllowedCategoriesInInt()
+        {
+            return severity != null
+                ? severity.Select(item => (uint)Enum.Parse(typeof(DiagnosticSeverity), item, true))
+                : null;
+        }
+
         bool HasMethod<T>(T obj, string methodName)
         {
             var type = obj.GetType();
@@ -1982,6 +1995,11 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer
         bool HasGetSeverity<T>(T obj)
         {
             return HasMethod<T>(obj, "GetSeverity");
+        }
+
+        bool HasGetCategory<T>(T obj)
+        {
+            return HasMethod<T>(obj, "GetCategory");
         }
 
         bool IsRuleAllowed(IRule rule)

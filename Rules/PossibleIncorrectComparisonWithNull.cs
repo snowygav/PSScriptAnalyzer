@@ -38,7 +38,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 {
                     if (IncorrectComparisonWithNull(binExpressionAst, ast))
                     {
-                        yield return new DiagnosticRecord(Strings.PossibleIncorrectComparisonWithNullError, binExpressionAst.Extent, GetName(), DiagnosticSeverity.Medium, fileName,
+                        yield return new DiagnosticRecord(Strings.PossibleIncorrectComparisonWithNullError, binExpressionAst.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName,
                             null, suggestedCorrections: GetCorrectionExtent(binExpressionAst));
                     }
                 }
@@ -61,7 +61,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 {
                     if (IncorrectComparisonWithNull(binAst, funcAst))
                     {
-                        yield return new DiagnosticRecord(Strings.PossibleIncorrectComparisonWithNullError, binAst.Extent, GetName(), DiagnosticSeverity.Medium, fileName,
+                        yield return new DiagnosticRecord(Strings.PossibleIncorrectComparisonWithNullError, binAst.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName,
                             null, suggestedCorrections: GetCorrectionExtent(binAst));
                     }
                 }
@@ -159,6 +159,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         {
             return RuleSeverity.Medium;
         }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.MemoryManagement;
+        }
+        
 
         /// <summary>
         /// GetSourceName: Retrieves the module/assembly name the rule is from.

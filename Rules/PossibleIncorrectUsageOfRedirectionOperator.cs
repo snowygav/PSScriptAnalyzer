@@ -38,7 +38,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     {
                         yield return new DiagnosticRecord(
                             Strings.PossibleIncorrectUsageOfRedirectionOperatorError, fileRedirectionAst.Extent,
-                            GetName(), DiagnosticSeverity.Medium, fileName);
+                            GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
                     }
                 }
             }
@@ -87,6 +87,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         {
             return RuleSeverity.Medium;
         }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+        
 
         /// <summary>
         /// GetSourceName: Retrieves the module/assembly name the rule is from.

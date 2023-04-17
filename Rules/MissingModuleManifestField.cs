@@ -59,7 +59,8 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                 errorRecord.Exception.Message, 
                                 hashTableAst.Extent, 
                                 GetName(), 
-                                DiagnosticSeverity.Medium, 
+                                DiagnosticSeverity.MediumXXX, 
+                                GetCategory(), 
                                 fileName,
                                 suggestedCorrections:GetCorrectionExtent(hashTableAst as HashtableAst));
                         }
@@ -177,6 +178,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         {
             return RuleSeverity.Medium;
         }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+        
 
         /// <summary>
         /// Method: Retrieves the module/assembly name the rule is from.

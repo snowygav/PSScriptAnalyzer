@@ -16,6 +16,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
         private IScriptExtent extent;
         private string ruleName;
         private DiagnosticSeverity severity;
+        private RuleCategory category;
         private string scriptPath;
         private string ruleSuppressionId;
         private IEnumerable<CorrectionExtent> suggestedCorrections;
@@ -55,6 +56,17 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
             get { return severity; }
             set { severity = value; }
         }
+
+        
+        /// <summary>
+        /// Represents a category level of an issue.
+        /// </summary>
+        public RuleCategory Category
+        {
+            get { return category; }
+            set { category = value; }
+        }
+
 
         /// <summary>
         /// Represents the name of the script file that is under analysis
@@ -108,6 +120,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
         /// <param name="extent">The place in the script this diagnostic refers to</param>
         /// <param name="ruleName">The name of the rule that created this diagnostic</param>
         /// <param name="severity">The severity of this diagnostic</param>
+        /// <param name="category">The category of this diagnostic</param>
         /// <param name="scriptPath">The full path of the script file being analyzed</param>
         /// <param name="suggestedCorrections">The correction suggested by the rule to replace the extent text</param>
         public DiagnosticRecord(
@@ -115,6 +128,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
             IScriptExtent extent,
             string ruleName,
             DiagnosticSeverity severity,
+            RuleCategory category,
             string scriptPath,
             string ruleId = null,
             IEnumerable<CorrectionExtent> suggestedCorrections = null)
@@ -123,6 +137,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
             RuleName = ruleName;
             Extent = extent;
             Severity = severity;
+            Category = category;
             ScriptPath = scriptPath;
             RuleSuppressionID = ruleId;
             this.suggestedCorrections = suggestedCorrections;
@@ -143,7 +158,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
         /// <summary>
         /// MEDIUM: This warning may cause a problem or does not follow PowerShell's recommended guidelines.
         /// </summary>
-        Medium = 1,
+        MediumXXX = 1,
 
         /// <summary>
         /// HIGH: This warning is likely to cause a problem or does not follow PowerShell's required guidelines.

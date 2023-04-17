@@ -67,7 +67,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
             {
                 return new DiagnosticRecord(
                     Strings.PossibleIncorrectUsageOfAssignmentOperatorError, assignmentStatementAst.ErrorPosition,
-                    GetName(), DiagnosticSeverity.Medium, fileName);
+                    GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
             }
 
             // Check if LHS is $null and then always warn
@@ -77,7 +77,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 {
                     return new DiagnosticRecord(
                         Strings.PossibleIncorrectUsageOfAssignmentOperatorError, assignmentStatementAst.ErrorPosition,
-                        GetName(), DiagnosticSeverity.Medium, fileName);
+                        GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
                 }
             }
 
@@ -90,7 +90,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
             {
                 return new DiagnosticRecord(
                    Strings.PossibleIncorrectUsageOfAssignmentOperatorError, assignmentStatementAst.ErrorPosition,
-                   GetName(), DiagnosticSeverity.Information, fileName);
+                   GetName(), DiagnosticSeverity.Information, GetCategory(), fileName);
             }
 
             return null;
@@ -139,6 +139,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         {
             return RuleSeverity.Information;
         }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+        
 
         /// <summary>
         /// GetSourceName: Retrieves the module/assembly name the rule is from.

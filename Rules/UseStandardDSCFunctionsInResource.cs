@@ -49,7 +49,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 if (!targetResourceFunctionNamesInAst.Contains(expectedTargetResourceFunctionName, StringComparer.OrdinalIgnoreCase))
                 {
                     yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.UseStandardDSCFunctionsInResourceError, expectedTargetResourceFunctionName),
-                        ast.Extent, GetName(), DiagnosticSeverity.Critical, fileName);      
+                        ast.Extent, GetName(), DiagnosticSeverity.Critical, GetCategory(), fileName);      
                 }
             }
         }        
@@ -86,7 +86,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     if (!functions.Any(function => String.Equals(resourceFunctionName, (function as FunctionMemberAst).Name)))
                     {
                         yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.UseStandardDSCFunctionsInClassError, resourceFunctionName),
-                            dscClass.Extent, GetName(), DiagnosticSeverity.Critical, fileName);
+                            dscClass.Extent, GetName(), DiagnosticSeverity.Critical, GetCategory(), fileName);
                     }
                 }
             }
@@ -137,6 +137,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         {
             return RuleSeverity.Critical;
         }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+        
 
         /// <summary>
         /// GetSourceName: Retrieves the module/assembly name the rule is from.

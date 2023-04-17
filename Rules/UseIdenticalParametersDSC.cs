@@ -48,7 +48,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 if (funcParamAsts.Count() != funcParamAsts2.Count())
                 {
                     yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.UseIdenticalParametersDSCError),
-                        firstFunc.Extent, GetName(), DiagnosticSeverity.Critical, fileName);
+                        firstFunc.Extent, GetName(), DiagnosticSeverity.Critical, GetCategory(), fileName);
                 }
 
                 foreach (ParameterAst paramAst in funcParamAsts)
@@ -62,7 +62,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         || !CompareParamAsts(paramAst, paramNames[paramAst.Name.VariablePath.UserPath]))
                     {
                         yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.UseIdenticalParametersDSCError),
-                            paramAst.Extent, GetName(), DiagnosticSeverity.Critical, fileName);   
+                            paramAst.Extent, GetName(), DiagnosticSeverity.Critical, GetCategory(), fileName);   
                     }
                 }
             }
@@ -163,6 +163,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         {
             return RuleSeverity.Critical;
         }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+        
 
         /// <summary>
         /// GetSourceName: Retrieves the module/assembly name the rule is from.

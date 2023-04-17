@@ -62,7 +62,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Commands
         /// Severity: Array of the severity types to be enabled.
         /// </summary>
         /// </summary>
-        [ValidateSet("Warning", "Error", "Information", IgnoreCase = true)]
+        [ValidateSet("Critical", "High", "Medium", "Information", IgnoreCase = true)]
         [Parameter(Mandatory = false)]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         public string[] Severity
@@ -71,6 +71,20 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Commands
             set { severity = value; }
         }
         private string[] severity;
+
+        /// <summary>
+        /// Severity: Array of the category types to be enabled.
+        /// </summary>
+        /// </summary>
+        [ValidateSet("InputValidation", "OutputEncoding", "AuthenticationandPasswordManagement", "SessionManagement", "AccessControl", "CryptographicPractices", "ErrorHandlingandLogging", "DataProtection", "CommunicationSecurity", "SystemConfiguration", "DatabaseSecurity", "FileManagement", "MemoryManagement", "GeneralCodingPractices", IgnoreCase = true)]
+        [Parameter(Mandatory = false)]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        public string[] Category
+        {
+            get { return category; }
+            set { category = value; }
+        }
+        private string[] category;
 
         #endregion Parameters
 
@@ -116,7 +130,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Commands
                 foreach (IRule rule in rules)
                 {
                     WriteObject(new RuleInfo(rule.GetName(), rule.GetCommonName(), rule.GetDescription(),
-                        rule.GetSourceType(), rule.GetSourceName(), rule.GetSeverity(), rule.GetType()));
+                        rule.GetSourceType(), rule.GetSourceName(), rule.GetSeverity(), rule.GetCategory(), rule.GetType()));
                 }
             }
         }

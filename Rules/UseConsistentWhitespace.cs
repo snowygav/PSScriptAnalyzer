@@ -165,12 +165,22 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         }
 
         /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public override RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+        
+
+        /// <summary>
         /// Gets the severity of the returned diagnostic record: critical, high, medium or information.
         /// </summary>
         /// <returns></returns>
         public DiagnosticSeverity GetDiagnosticSeverity()
         {
-            return DiagnosticSeverity.Medium;
+            return DiagnosticSeverity.MediumXXX;
         }
 
         /// <summary>
@@ -249,6 +259,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     lcurly.Value.Extent,
                     GetName(),
                     GetDiagnosticSeverity(),
+                    GetCategory(), 
                     tokenOperations.Ast.Extent.File,
                     null,
                     GetCorrections(lcurly.Previous.Value, lcurly.Value, lcurly.Next.Value, false, true).ToList());
@@ -276,6 +287,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         lCurly.Value.Extent,
                         GetName(),
                         GetDiagnosticSeverity(),
+                        GetCategory(), 
                         tokenOperations.Ast.Extent.File,
                         null,
                         GetCorrections(lCurly.Previous.Value, lCurly.Value, lCurly.Next.Value, true, false).ToList());
@@ -302,6 +314,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         rCurly.Value.Extent,
                         GetName(),
                         GetDiagnosticSeverity(),
+                        GetCategory(), 
                         tokenOperations.Ast.Extent.File,
                         null,
                         GetCorrections(rCurly.Previous.Value, rCurly.Value, rCurly.Next.Value, false, true).ToList());
@@ -332,6 +345,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                             pipe.Value.Extent,
                             GetName(),
                             GetDiagnosticSeverity(),
+                            GetCategory(), 
                             tokenOperations.Ast.Extent.File,
                             null,
                             GetCorrections(pipe.Previous.Value, pipe.Value, pipe.Next.Value, true, false).ToList());
@@ -360,6 +374,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         pipe.Value.Extent,
                         GetName(),
                         GetDiagnosticSeverity(),
+                        GetCategory(), 
                         tokenOperations.Ast.Extent.File,
                         null,
                         GetCorrections(pipe.Previous.Value, pipe.Value, pipe.Next.Value, false, true).ToList());
@@ -383,6 +398,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         lparen.Value.Extent,
                         GetName(),
                         GetDiagnosticSeverity(),
+                        GetCategory(), 
                         tokenOperations.Ast.Extent.File,
                         null,
                         GetCorrections(lparen.Previous.Value, lparen.Value, lparen.Next.Value, false, true).ToList());
@@ -424,6 +440,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                             leftExtent,
                             GetName(),
                             GetDiagnosticSeverity(),
+                            GetCategory(), 
                             leftExtent.File,
                             suggestedCorrections: new CorrectionExtent[] { correction });
                     }
@@ -473,6 +490,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 token.Extent,
                 GetName(),
                 GetDiagnosticSeverity(),
+                GetCategory(), 
                 token.Extent.File,
                 null,
                 corrections);
@@ -562,6 +580,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         tokenNode.Value.Extent,
                         GetName(),
                         GetDiagnosticSeverity(),
+                        GetCategory(), 
                         tokenOperations.Ast.Extent.File,
                         null,
                         GetCorrections(

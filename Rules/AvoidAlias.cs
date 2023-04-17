@@ -125,7 +125,8 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         string.Format(CultureInfo.CurrentCulture, Strings.AvoidUsingCmdletAliasesError, commandName, cmdletNameIfCommandNameWasAlias),
                         GetCommandExtent(cmdAst),
                         GetName(),
-                        DiagnosticSeverity.Medium,
+                        DiagnosticSeverity.MediumXXX,
+                        GetCategory(),
                         fileName,
                         commandName,
                         suggestedCorrections: GetCorrectionExtent(cmdAst, cmdletNameIfCommandNameWasAlias));
@@ -150,6 +151,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                             GetCommandExtent(cmdAst),
                             "InvalidSyntaxAroundProcessBlock",
                             DiagnosticSeverity.ParseError,
+                            GetCategory(),
                             fileName,
                             commandName);
                     }
@@ -159,7 +161,8 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                             string.Format(CultureInfo.CurrentCulture, Strings.AvoidUsingCmdletAliasesMissingGetPrefixError, commandName, commdNameWithGetPrefix),
                             GetCommandExtent(cmdAst),
                             GetName(),
-                            DiagnosticSeverity.Medium,
+                            DiagnosticSeverity.MediumXXX,
+                            GetCategory(),
                             fileName,
                             commandName,
                             suggestedCorrections: GetCorrectionExtent(cmdAst, commdNameWithGetPrefix));
@@ -276,6 +279,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         {
             return RuleSeverity.Medium;
         }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+
 
         /// <summary>
         /// GetSourceName: Retrieves the name of the module/assembly the rule is from.

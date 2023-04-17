@@ -86,7 +86,8 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                 yield return new DiagnosticRecord(message,
                                                                     paramAst.Extent, 
                                                                     GetName(), 
-                                                                    DiagnosticSeverity.Medium, 
+                                                                    DiagnosticSeverity.MediumXXX, 
+                                                                    GetCategory(), 
                                                                     fileName, 
                                                                     paramAst.Name.VariablePath.UserPath);
                             }                            
@@ -164,6 +165,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         {
             return RuleSeverity.Medium;
         }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+        
 
         /// <summary>
         /// GetSourceName: Retrieves the module/assembly name the rule is from.

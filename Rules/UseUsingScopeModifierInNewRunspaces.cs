@@ -84,6 +84,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         }
 
         /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.MemoryManagement;
+        }
+        
+
+        /// <summary>
         /// GetSourceName: Retrieves the module/assembly name the rule is from.
         /// </summary>
         public string GetSourceName()
@@ -97,7 +107,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         private class SyntaxCompatibilityVisitor : AstVisitor
 #endif
         {
-            private const DiagnosticSeverity Severity = DiagnosticSeverity.Medium;
+            private const DiagnosticSeverity Severity = DiagnosticSeverity.MediumXXX;
 
             private static readonly string[] s_dscScriptResourceCommandNames = {"GetScript", "TestScript", "SetScript"};
 
@@ -426,6 +436,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                             variableExpression.Extent,
                             _rule.GetName(),
                             Severity,
+                            _rule.GetCategory(),
                             _analyzedFilePath,
                             ruleId: _rule.GetName(),
                             GetSuggestedCorrections(ast: variableExpression)));

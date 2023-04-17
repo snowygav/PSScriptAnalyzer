@@ -163,12 +163,22 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         }
 
         /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public override RuleCategory GetCategory()
+        {
+            return RuleCategory.CryptographicPractices;
+        }
+        
+
+        /// <summary>
         /// DiagnosticSeverity: Retrieves the severity of the rule of type DiagnosticSeverity: critical, high, medium or information.
         /// </summary>
         /// <returns></returns>
         public override DiagnosticSeverity GetDiagnosticSeverity()
         {
-            return DiagnosticSeverity.Medium;
+            return DiagnosticSeverity.MediumXXX;
         }
 
         /// <summary>

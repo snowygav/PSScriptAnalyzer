@@ -107,6 +107,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         }
 
         /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public override RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+        
+
+        /// <summary>
         /// Get the name of the source of this rule.
         /// </summary>
         public override string GetSourceName()
@@ -301,6 +311,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         typeDefinitionAst.Extent,
                         _rule.GetName(),
                         _rule.Severity,
+                        _rule.GetCategory(),
                         _analyzedFilePath
                     ));
 
@@ -431,6 +442,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                             offendingAst.Extent,
                             _rule.GetName(),
                             _rule.Severity,
+                            _rule.GetCategory(),
                             _analyzedFilePath));
 
                     return;
@@ -442,6 +454,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         offendingAst.Extent,
                         _rule.GetName(),
                         _rule.Severity,
+                        _rule.GetCategory(),
                         _analyzedFilePath,
                         ruleId: null,
                         new[] { correction }));

@@ -145,7 +145,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Commands
         /// <summary>
         /// IncludeRule: Array of the severity types to be enabled.
         /// </summary>
-        [ValidateSet("Warning", "Error", "Information", "ParseError", IgnoreCase = true)]
+        [ValidateSet("Critical", "High", "Medium", "Information", "ParseError", IgnoreCase = true)]
         [Parameter(Mandatory = false)]
         [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
         public string[] Severity
@@ -154,6 +154,21 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Commands
             set { severity = value; }
         }
         private string[] severity;
+
+        /// <summary>
+        /// IncludeRule: Array of the category types to be enabled.
+        /// </summary>
+        [ValidateSet("InputValidation", "OutputEncoding", "AuthenticationandPasswordManagement", "SessionManagement", "AccessControl", "CryptographicPractices", "ErrorHandlingandLogging", "DataProtection", "CommunicationSecurity", "SystemConfiguration", "DatabaseSecurity", "FileManagement", "MemoryManagement", "GeneralCodingPractices", IgnoreCase = true)]
+        [Parameter(Mandatory = false)]
+        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
+        public string[] Category
+        {
+            get { return category; }
+            set { category = value; }
+        }
+        private string[] category;
+
+
 
         // TODO: This should be only in the Path parameter sets, and is ignored otherwise,
         //       but we already have a test that depends on it being otherwise
@@ -472,7 +487,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Commands
                         case DiagnosticSeverity.Information:
                             infoCount++;
                             break;
-                        case DiagnosticSeverity.Medium:
+                        case DiagnosticSeverity.MediumXXX:
                             warningCount++;
                             break;
                         case DiagnosticSeverity.Critical:
@@ -496,7 +511,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Commands
                     else
                     {
                         var pluralS = numberOfRuleViolations > 1 ? "s" : string.Empty;
-                        var message = $"{numberOfRuleViolations} rule violation{pluralS} found.    Severity distribution:  {DiagnosticSeverity.Critical} = {errorCount}, {DiagnosticSeverity.Medium} = {warningCount}, {DiagnosticSeverity.Information} = {infoCount}";
+                        var message = $"{numberOfRuleViolations} rule violation{pluralS} found.    Severity distribution:  {DiagnosticSeverity.Critical} = {errorCount}, {DiagnosticSeverity.MediumXXX} = {warningCount}, {DiagnosticSeverity.Information} = {infoCount}";
                         if (warningCount + errorCount == 0)
                         {
                             ConsoleHostHelper.DisplayMessageUsingSystemProperties(Host, "WarningForegroundColor", "WarningBackgroundColor", message);

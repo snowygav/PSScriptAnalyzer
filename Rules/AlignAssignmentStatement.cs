@@ -112,12 +112,21 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         }
 
         /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public override RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+
+        /// <summary>
         /// Gets the severity of the returned diagnostic record: critical, high, medium or information.
         /// </summary>
         /// <returns></returns>
         public DiagnosticSeverity GetDiagnosticSeverity()
         {
-            return DiagnosticSeverity.Medium;
+            return DiagnosticSeverity.MediumXXX;
         }
 
         /// <summary>
@@ -201,6 +210,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                             extentTuple.Item2,
                             GetName(),
                             GetDiagnosticSeverity(),
+                            GetCategory(),
                             extentTuple.Item1.File,
                             null,
                             GetHashtableCorrections(extentTuple, expectedStartColumnNumber).ToList());

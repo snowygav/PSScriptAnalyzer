@@ -17,6 +17,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
         private SourceType sourceType;
         private string sourceName;
         private RuleSeverity ruleSeverity;
+        private RuleCategory ruleCategory;
         private Type implementingType;
 
         /// <summary>
@@ -81,6 +82,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
         }
 
         /// <summary>
+        /// Category : The category of the rule violation.
+        /// </summary>
+        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        public RuleCategory Category
+        {
+            get { return ruleCategory; }
+            private set { ruleCategory = value; }
+        }
+
+        /// <summary>
         /// ImplementingType : The type which implements the rule.
         /// </summary>
         [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
@@ -98,14 +109,15 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
         /// <param name="description">Description of the rule.</param>
         /// <param name="sourceType">Source type of the rule.</param>
         /// <param name="sourceName">Source name of the rule.</param>
-        public RuleInfo(string name, string commonName, string description, SourceType sourceType, string sourceName, RuleSeverity severity)
+        public RuleInfo(string name, string commonName, string description, SourceType sourceType, string sourceName, RuleSeverity severity, RuleCategory category)
         {
-            RuleName        = name;
-            CommonName  = commonName;
+            RuleName = name;
+            CommonName = commonName;
             Description = description;
-            SourceType  = sourceType;
-            SourceName  = sourceName;
+            SourceType = sourceType;
+            SourceName = sourceName;
             Severity = severity;
+            Category = category;
         }
 
         /// <summary>
@@ -117,14 +129,15 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
         /// <param name="sourceType">Source type of the rule.</param>
         /// <param name="sourceName">Source name of the rule.</param>
         /// <param name="implementingType">The dotnet type of the rule.</param>
-        public RuleInfo(string name, string commonName, string description, SourceType sourceType, string sourceName, RuleSeverity severity, Type implementingType)
+        public RuleInfo(string name, string commonName, string description, SourceType sourceType, string sourceName, RuleSeverity severity, RuleCategory category, Type implementingType)
         {
-            RuleName        = name;
-            CommonName  = commonName;
+            RuleName = name;
+            CommonName = commonName;
             Description = description;
-            SourceType  = sourceType;
-            SourceName  = sourceName;
+            SourceType = sourceType;
+            SourceName = sourceName;
             Severity = severity;
+            Category = category;
             ImplementingType = implementingType;
         }
 

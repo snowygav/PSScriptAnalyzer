@@ -62,7 +62,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     foreach (Tuple<string, StatementAst> outputType in outputTypes)
                     {
                         yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.ReturnCorrectTypesForSetTargetResourceFunctionsDSCError),
-                            outputType.Item2.Extent, GetName(), DiagnosticSeverity.Information, fileName);
+                            outputType.Item2.Extent, GetName(), DiagnosticSeverity.Information, GetCategory(), fileName);
                     }
                 }
                 else
@@ -86,7 +86,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         else
                         {
                             yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.ReturnCorrectTypesForGetTestTargetResourceFunctionsDSCResourceError,
-                                func.Name, returnTypes[func.Name], type), outputType.Item2.Extent, GetName(), DiagnosticSeverity.Information, fileName);
+                                func.Name, returnTypes[func.Name], type), outputType.Item2.Extent, GetName(), DiagnosticSeverity.Information, GetCategory(), fileName);
                         }
                     }
                 }
@@ -131,7 +131,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     if (!String.Equals(funcAst.Name, "Set") && !Helper.Instance.AllCodePathReturns(funcAst))
                     {
                         yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.NotAllCodePathReturnsDSCFunctionsError, funcAst.Name, dscClass.Name),
-                            funcAst.Extent, GetName(), DiagnosticSeverity.Information, fileName);
+                            funcAst.Extent, GetName(), DiagnosticSeverity.Information, GetCategory(), fileName);
                     }
 
                     if (String.Equals(funcAst.Name, "Set"))
@@ -142,7 +142,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                             if (ret.Pipeline != null)
                             {
                                 yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.ReturnCorrectTypesForSetFunctionsDSCError, dscClass.Name),
-                                    funcAst.Extent, GetName(), DiagnosticSeverity.Information, fileName);
+                                    funcAst.Extent, GetName(), DiagnosticSeverity.Information, GetCategory(), fileName);
                             }
                         }
                     }
@@ -158,7 +158,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                             {
                                 yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.ReturnCorrectTypesForDSCFunctionsNoTypeError,
                                     funcAst.Name, dscClass.Name, returnTypes[funcAst.Name]),
-                                    ret.Extent, GetName(), DiagnosticSeverity.Information, fileName);
+                                    ret.Extent, GetName(), DiagnosticSeverity.Information, GetCategory(), fileName);
                             }
 
                             string typeName = Helper.Instance.GetTypeFromReturnStatementAst(funcAst, ret, classes);
@@ -176,7 +176,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                             {
                                 yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.ReturnCorrectTypesForDSCFunctionsWrongTypeError,
                                     funcAst.Name, dscClass.Name, returnTypes[funcAst.Name], typeName),
-                                    ret.Extent, GetName(), DiagnosticSeverity.Information, fileName);
+                                    ret.Extent, GetName(), DiagnosticSeverity.Information, GetCategory(), fileName);
                             }
                         }
                     }
@@ -230,6 +230,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         {
             return RuleSeverity.Information;
         }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.MemoryManagement;
+        }
+        
 
         /// <summary>
         /// GetSourceName: Retrieves the module/assembly name the rule is from.

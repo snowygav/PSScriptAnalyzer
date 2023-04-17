@@ -115,9 +115,19 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
             return RuleSeverity.Medium;
         }
 
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+        
+
         private DiagnosticSeverity GetDianosticSeverity()
         {
-            return DiagnosticSeverity.Medium;
+            return DiagnosticSeverity.MediumXXX;
         }
 
         /// <summary>
@@ -163,6 +173,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         Helper.Instance.GetShouldProcessAttributeAst(fast.Body.ParamBlock.Attributes).Extent,
                         GetName(),
                         GetDianosticSeverity(),
+                        GetCategory(),
                         ast.Extent.File);
                 }
             }
@@ -186,6 +197,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                             GetShouldProcessCallExtent(fast),
                             GetName(),
                             GetDianosticSeverity(),
+                            GetCategory(),
                             fileName);
                 }
             }

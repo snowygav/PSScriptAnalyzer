@@ -161,12 +161,22 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         }
 
         /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public override RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+        
+
+        /// <summary>
         /// Gets the severity of the returned diagnostic record: critical, high, medium or information.
         /// </summary>
         /// <returns></returns>
         public DiagnosticSeverity GetDiagnosticSeverity()
         {
-            return DiagnosticSeverity.Medium;
+            return DiagnosticSeverity.MediumXXX;
         }
 
         /// <summary>
@@ -215,6 +225,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         tokens[k].Extent,
                         GetName(),
                         GetDiagnosticSeverity(),
+                        GetCategory(), 
                         fileName,
                         null,
                         GetCorrectionsForBraceShouldBeOnSameLine(precedingExpression, optionalComment, tokens[k], fileName));
@@ -245,6 +256,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         tokens[k].Extent,
                         GetName(),
                         GetDiagnosticSeverity(),
+                        GetCategory(), 
                         fileName,
                         null,
                         GetCorrectionsForNoNewLineAfterBrace(tokens, k, fileName));
@@ -273,6 +285,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         tokens[k].Extent,
                         GetName(),
                         GetDiagnosticSeverity(),
+                        GetCategory(), 
                         fileName,
                         null,
                         GetCorrectionsForBraceShouldNotBeOnSameLine(tokens, k - 1, k, fileName));

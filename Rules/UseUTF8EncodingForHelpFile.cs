@@ -42,7 +42,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     if (reader.CurrentEncoding != System.Text.Encoding.UTF8)
                     {
                         yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.UseUTF8EncodingForHelpFileError, System.IO.Path.GetFileName(fileName), reader.CurrentEncoding),
-                            null, GetName(), DiagnosticSeverity.Medium, fileName);
+                            null, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
                     }
                 }
             }
@@ -91,6 +91,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         {
             return RuleSeverity.Medium;
         }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.OutputEncoding;
+        }
+        
 
         /// <summary>
         /// GetSourceName: Retrieves the name of the module/assembly the rule is from.

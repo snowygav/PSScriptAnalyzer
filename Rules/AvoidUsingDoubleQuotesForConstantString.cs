@@ -86,6 +86,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 stringConstantExpressionAst.Extent,
                 GetName(),
                 GetDiagnosticSeverity(),
+                GetCategory(), 
                 stringConstantExpressionAst.Extent.File,
                 suggestedCorrections: new[] {
                     new CorrectionExtent(
@@ -132,6 +133,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         {
             return RuleSeverity.Information;
         }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public override RuleCategory GetCategory()
+        {
+            return RuleCategory.InputValidation;
+        }
+        
 
         /// <summary>
         /// Gets the severity of the returned diagnostic record: critical, high, medium or information.

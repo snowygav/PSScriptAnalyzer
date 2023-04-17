@@ -61,7 +61,8 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         string.Format(CultureInfo.CurrentCulture, Strings.UseCorrectCasingError, commandName, correctlyCasedCommandName),
                         GetCommandExtent(commandAst),
                         GetName(),
-                        DiagnosticSeverity.Medium,
+                        DiagnosticSeverity.MediumXXX,
+                        GetCategory(), 
                         fileName,
                         commandName,
                         suggestedCorrections: GetCorrectionExtent(commandAst, correctlyCasedCommandName));
@@ -94,7 +95,8 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                 string.Format(CultureInfo.CurrentCulture, Strings.UseCorrectCasingParameterError, parameterName, commandName, correctlyCasedParameterName),
                                 GetCommandExtent(commandAst),
                                 GetName(),
-                                DiagnosticSeverity.Medium,
+                                DiagnosticSeverity.MediumXXX,
+                                GetCategory(), 
                                 fileName,
                                 commandName,
                                 suggestedCorrections: GetCorrectionExtent(commandParameterAst, correctlyCasedParameterName));
@@ -207,6 +209,16 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         {
             return RuleSeverity.Information;
         }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public override RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
+        }
+        
 
         /// <summary>
         /// GetSourceName: Retrieves the name of the module/assembly the rule is from.

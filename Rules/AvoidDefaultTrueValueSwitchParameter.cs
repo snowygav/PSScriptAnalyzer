@@ -41,13 +41,13 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     {
                         yield return new DiagnosticRecord(
                             String.Format(CultureInfo.CurrentCulture, Strings.AvoidDefaultValueSwitchParameterErrorScriptDefinition),
-                            paramAst.Extent, GetName(), DiagnosticSeverity.Medium, fileName);
+                            paramAst.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
                     }
                     else
                     {
                         yield return new DiagnosticRecord(
                             String.Format(CultureInfo.CurrentCulture, Strings.AvoidDefaultValueSwitchParameterError, System.IO.Path.GetFileName(fileName)),
-                            paramAst.Extent, GetName(), DiagnosticSeverity.Medium, fileName);
+                            paramAst.Extent, GetName(), DiagnosticSeverity.MediumXXX, GetCategory(), fileName);
                     }
                 }
             }
@@ -95,6 +95,15 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         public RuleSeverity GetSeverity()
         {
             return RuleSeverity.Medium;
+        }
+
+        /// <summary>
+        /// GetCategory: Retrieves the category of the rule: InputValidation, OutputEncoding, AuthenticationandPasswordManagement, SessionManagement, AccessControl, CryptographicPractices, ErrorHandlingandLogging, DataProtection, CommunicationSecurity, SystemConfiguration, DatabaseSecurity, FileManagement, MemoryManagement, GeneralCodingPractices.
+        /// </summary>
+        /// <returns></returns>
+        public RuleCategory GetCategory()
+        {
+            return RuleCategory.GeneralCodingPractices;
         }
 
         /// <summary>
