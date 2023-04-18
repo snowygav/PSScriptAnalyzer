@@ -196,7 +196,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
         
 

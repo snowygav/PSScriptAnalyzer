@@ -56,7 +56,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         String.Format(CultureInfo.CurrentCulture, Strings.AvoidUsingPlainTextForPasswordError, paramAst.Name),
                         paramAst.Extent,
                         GetName(),
-                        DiagnosticSeverity.Medium,
+                        DiagnosticSeverity.Unknown,
                         GetCategory(), 
                         fileName,
                         paramName,

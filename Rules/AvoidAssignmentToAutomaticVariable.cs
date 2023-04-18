@@ -62,12 +62,12 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 if (_readOnlyAutomaticVariables.Contains(variableName, StringComparer.OrdinalIgnoreCase))
                 {
                     yield return new DiagnosticRecord(DiagnosticRecordHelper.FormatError(Strings.AvoidAssignmentToReadOnlyAutomaticVariableError, variableName),
-                                                      variableExpressionAst.Extent, GetName(), DiagnosticSeverity.Critical, GetCategory(), fileName);
+                                                      variableExpressionAst.Extent, GetName(), DiagnosticSeverity.Unknown, GetCategory(), fileName);
                 }
 
                 if (_readOnlyAutomaticVariablesIntroducedInVersion6_0.Contains(variableName, StringComparer.OrdinalIgnoreCase))
                 {
-                    var severity = IsPowerShellVersion6OrGreater() ? DiagnosticSeverity.Critical : DiagnosticSeverity.Medium;
+                    var severity = IsPowerShellVersion6OrGreater() ? DiagnosticSeverity.Unknown : DiagnosticSeverity.Unknown;
                     yield return new DiagnosticRecord(DiagnosticRecordHelper.FormatError(Strings.AvoidAssignmentToReadOnlyAutomaticVariableIntroducedInPowerShell6_0Error, variableName),
                                                       variableExpressionAst.Extent, GetName(), severity, GetCategory(), fileName);
                 }
@@ -75,7 +75,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 if (_writableAutomaticVariables.Contains(variableName, StringComparer.OrdinalIgnoreCase))
                 {
                     yield return new DiagnosticRecord(DiagnosticRecordHelper.FormatError(Strings.AvoidAssignmentToWritableAutomaticVariableError, variableName),
-                                                      variableExpressionAst.Extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
+                                                      variableExpressionAst.Extent, GetName(), DiagnosticSeverity.Unknown, GetCategory(), fileName);
                 }
             }
 
@@ -93,12 +93,12 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 if (_readOnlyAutomaticVariables.Contains(variableName, StringComparer.OrdinalIgnoreCase))
                 {
                     yield return new DiagnosticRecord(DiagnosticRecordHelper.FormatError(Strings.AvoidAssignmentToReadOnlyAutomaticVariableError, variableName),
-                                                      variableExpressionAst.Extent, GetName(), DiagnosticSeverity.Critical, GetCategory(), fileName);
+                                                      variableExpressionAst.Extent, GetName(), DiagnosticSeverity.Unknown, GetCategory(), fileName);
                 }
 
                 if (_readOnlyAutomaticVariablesIntroducedInVersion6_0.Contains(variableName, StringComparer.OrdinalIgnoreCase))
                 {
-                    var severity = IsPowerShellVersion6OrGreater() ? DiagnosticSeverity.Critical : DiagnosticSeverity.Medium;
+                    var severity = IsPowerShellVersion6OrGreater() ? DiagnosticSeverity.Unknown : DiagnosticSeverity.Unknown;
                     yield return new DiagnosticRecord(DiagnosticRecordHelper.FormatError(Strings.AvoidAssignmentToReadOnlyAutomaticVariableIntroducedInPowerShell6_0Error, variableName),
                                                       variableExpressionAst.Extent, GetName(), severity, GetCategory(),fileName);
                 }
@@ -106,7 +106,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 if (_writableAutomaticVariables.Contains(variableName, StringComparer.OrdinalIgnoreCase))
                 {
                     yield return new DiagnosticRecord(DiagnosticRecordHelper.FormatError(Strings.AvoidAssignmentToWritableAutomaticVariableError, variableName),
-                                                      variableExpressionAst.Extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
+                                                      variableExpressionAst.Extent, GetName(), DiagnosticSeverity.Unknown, GetCategory(), fileName);
                 }
             }
         }
@@ -171,7 +171,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
 
         /// <summary>

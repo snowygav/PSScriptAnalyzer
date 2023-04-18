@@ -43,7 +43,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         String.Format(CultureInfo.CurrentCulture, Strings.AvoidMultipleTypeAttributesError, paramAst.Name),
                         paramAst.Name.Extent,
                         GetName(), 
-                        DiagnosticSeverity.Medium, 
+                        DiagnosticSeverity.Unknown, 
                         GetCategory(), 
                         fileName);
                 }
@@ -100,7 +100,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
         
 

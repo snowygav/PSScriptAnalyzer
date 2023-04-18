@@ -37,7 +37,7 @@ function Test-StaticMethod
                 [PSCustomObject]@{Message  = "Avoid Using Static Methods";
                                   Extent   = $invokedMethod.Extent;
                                   RuleName = $PSCmdlet.MyInvocation.InvocationName;
-                                  Severity = "Warning"}
+                                  Severity = "Unknown"}
             }
         }
         catch

@@ -1,8 +1,10 @@
 @{
     Severity     = @(
-        'Error',
-        'Warning',
+        'Critical',
+        'High',
+        'Medium',
         'Information'
+        'Unknown'
     )
     ExcludeRules = @(
         'PSUseOutputTypeCorrectly',

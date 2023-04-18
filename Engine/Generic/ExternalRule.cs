@@ -60,7 +60,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
 
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
 
         public string GetSourceName()

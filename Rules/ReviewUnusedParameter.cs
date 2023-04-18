@@ -64,7 +64,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         string.Format(CultureInfo.CurrentCulture, Strings.ReviewUnusedParameterError, parameterAst.Name.VariablePath.UserPath),
                         parameterAst.Name.Extent,
                         GetName(),
-                        DiagnosticSeverity.Medium,
+                        DiagnosticSeverity.Unknown,
                         GetCategory(), 
                         fileName,
                         parameterAst.Name.VariablePath.UserPath
@@ -155,7 +155,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Medium;
+            return RuleSeverity.Unknown;
         }
 
         /// <summary>

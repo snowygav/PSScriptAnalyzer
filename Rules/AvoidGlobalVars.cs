@@ -41,7 +41,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         yield return
                             new DiagnosticRecord(
                                 string.Format(CultureInfo.CurrentCulture, Strings.AvoidGlobalVarsError,
-                                    varAst.VariablePath.UserPath), varAst.Extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName, varAst.VariablePath.UserPath);
+                                    varAst.VariablePath.UserPath), varAst.Extent, GetName(), DiagnosticSeverity.Unknown, GetCategory(), fileName, varAst.VariablePath.UserPath);
                     }
                 }
             }
@@ -97,7 +97,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
         
 

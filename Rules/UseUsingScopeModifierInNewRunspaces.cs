@@ -80,7 +80,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleSeverity GetSeverity()
         {
-            return RuleSeverity.Medium;
+            return RuleSeverity.Unknown;
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         private class SyntaxCompatibilityVisitor : AstVisitor
 #endif
         {
-            private const DiagnosticSeverity Severity = DiagnosticSeverity.Medium;
+            private const DiagnosticSeverity Severity = DiagnosticSeverity.Unknown;
 
             private static readonly string[] s_dscScriptResourceCommandNames = {"GetScript", "TestScript", "SetScript"};
 

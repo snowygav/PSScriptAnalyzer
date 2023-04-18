@@ -67,7 +67,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
             {
                 return new DiagnosticRecord(
                     Strings.PossibleIncorrectUsageOfAssignmentOperatorError, assignmentStatementAst.ErrorPosition,
-                    GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
+                    GetName(), DiagnosticSeverity.Unknown, GetCategory(), fileName);
             }
 
             // Check if LHS is $null and then always warn
@@ -77,7 +77,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 {
                     return new DiagnosticRecord(
                         Strings.PossibleIncorrectUsageOfAssignmentOperatorError, assignmentStatementAst.ErrorPosition,
-                        GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
+                        GetName(), DiagnosticSeverity.Unknown, GetCategory(), fileName);
                 }
             }
 
@@ -146,7 +146,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
         
 

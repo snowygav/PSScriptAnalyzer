@@ -75,7 +75,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         GetError(field), 
                         extent, 
                         GetName(), 
-                        DiagnosticSeverity.Medium, 
+                        DiagnosticSeverity.Unknown, 
                         GetCategory(),
                         fileName,
                         suggestedCorrections: GetCorrectionExtent(field, extent, psModuleInfo));

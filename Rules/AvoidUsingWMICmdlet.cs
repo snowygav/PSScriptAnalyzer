@@ -48,12 +48,12 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         if (String.IsNullOrWhiteSpace(fileName))
                         {
                             yield return new DiagnosticRecord(String.Format(CultureInfo.CurrentCulture, Strings.AvoidUsingWMICmdletErrorScriptDefinition),
-                                cmdAst.Extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
+                                cmdAst.Extent, GetName(), DiagnosticSeverity.Unknown, GetCategory(), fileName);
                         }
                         else
                         {
                             yield return new DiagnosticRecord(String.Format(CultureInfo.CurrentCulture, Strings.AvoidUsingWMICmdletError,
-                                System.IO.Path.GetFileName(fileName)), cmdAst.Extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
+                                System.IO.Path.GetFileName(fileName)), cmdAst.Extent, GetName(), DiagnosticSeverity.Unknown, GetCategory(), fileName);
                         }
                     }
                 }
@@ -133,7 +133,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
         
 

@@ -4,7 +4,7 @@
 BeforeAll {
     $settings = @{
         IncludeRules = "PSUseUsingScopeModifierInNewRunspaces"
-        Severity     = "warning" # because we need to prevent ParseErrors from being reported, so 'workflow' keyword will not be flagged when running test on Pwsh.
+        Severity     = "Unknown" # because we need to prevent ParseErrors from being reported, so 'workflow' keyword will not be flagged when running test on Pwsh.
     }
 }
 

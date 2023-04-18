@@ -404,7 +404,7 @@ Function Add-Rule
         [string] $Name,
 
         [Parameter(Mandatory=$true)]
-        [ValidateSet("Error", "Warning", "Information")]
+        [ValidateSet("Critical", "High", "Medium", "Information", "Unknown", "ParseError")]
         [string] $Severity,
 
         [Parameter(Mandatory=$true)]

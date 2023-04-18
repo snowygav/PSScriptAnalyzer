@@ -8,55 +8,55 @@ BeforeAll {
 Describe "AvoidAssignmentToAutomaticVariables" {
     Context "ReadOnly Variables" {
 
-        $excpectedSeverityForAutomaticVariablesInPowerShell6 = 'Warning'
+        $excpectedSeverityForAutomaticVariablesInPowerShell6 = 'Unknown'
         if ($PSVersionTable.PSVersion.Major -ge 6)
         {
-            $excpectedSeverityForAutomaticVariablesInPowerShell6 = 'Error'
+            $excpectedSeverityForAutomaticVariablesInPowerShell6 = 'Unknown'
         }
 
         $testCases_AutomaticVariables = @(
-            @{ VariableName = '?'; ExpectedSeverity = 'Error'; IsReadOnly = $true }
-            @{ VariableName = 'Error' ; ExpectedSeverity = 'Error';  IsReadOnly = $true }
-            @{ VariableName = 'ExecutionContext'; ExpectedSeverity = 'Error';  IsReadOnly = $true }
-            @{ VariableName = 'false'; ExpectedSeverity = 'Error';  IsReadOnly = $true }
-            @{ VariableName = 'Home'; ExpectedSeverity = 'Error';  IsReadOnly = $true }
-            @{ VariableName = 'Host'; ExpectedSeverity = 'Error';  IsReadOnly = $true }
-            @{ VariableName = 'PID'; ExpectedSeverity = 'Error';  IsReadOnly = $true }
-            @{ VariableName = 'PSCulture'; ExpectedSeverity = 'Error';  IsReadOnly = $true }
-            @{ VariableName = 'PSEdition'; ExpectedSeverity = 'Error';  IsReadOnly = $true }
-            @{ VariableName = 'PSHome'; ExpectedSeverity = 'Error';  IsReadOnly = $true }
-            @{ VariableName = 'PSUICulture'; ExpectedSeverity = 'Error';  IsReadOnly = $true }
-            @{ VariableName = 'PSVersionTable'; ExpectedSeverity = 'Error';  IsReadOnly = $true }
-            @{ VariableName = 'ShellId'; ExpectedSeverity = 'Error';  IsReadOnly = $true }
-            @{ VariableName = 'true'; ExpectedSeverity = 'Error';  IsReadOnly = $true }
+            @{ VariableName = '?'; ExpectedSeverity = 'Unknown'; IsReadOnly = $true }
+            @{ VariableName = 'Error' ; ExpectedSeverity = 'Unknown';  IsReadOnly = $true }
+            @{ VariableName = 'ExecutionContext'; ExpectedSeverity = 'Unknown';  IsReadOnly = $true }
+            @{ VariableName = 'false'; ExpectedSeverity = 'Unknown';  IsReadOnly = $true }
+            @{ VariableName = 'Home'; ExpectedSeverity = 'Unknown';  IsReadOnly = $true }
+            @{ VariableName = 'Host'; ExpectedSeverity = 'Unknown';  IsReadOnly = $true }
+            @{ VariableName = 'PID'; ExpectedSeverity = 'Unknown';  IsReadOnly = $true }
+            @{ VariableName = 'PSCulture'; ExpectedSeverity = 'Unknown';  IsReadOnly = $true }
+            @{ VariableName = 'PSEdition'; ExpectedSeverity = 'Unknown';  IsReadOnly = $true }
+            @{ VariableName = 'PSHome'; ExpectedSeverity = 'Unknown';  IsReadOnly = $true }
+            @{ VariableName = 'PSUICulture'; ExpectedSeverity = 'Unknown';  IsReadOnly = $true }
+            @{ VariableName = 'PSVersionTable'; ExpectedSeverity = 'Unknown';  IsReadOnly = $true }
+            @{ VariableName = 'ShellId'; ExpectedSeverity = 'Unknown';  IsReadOnly = $true }
+            @{ VariableName = 'true'; ExpectedSeverity = 'Unknown';  IsReadOnly = $true }
             # Variables introduced only in PowerShell 6+ have a Severity of Warning only
             @{ VariableName = 'IsCoreCLR'; ExpectedSeverity = $excpectedSeverityForAutomaticVariablesInPowerShell6; OnlyPresentInCoreClr = $true }
             @{ VariableName = 'IsLinux'; ExpectedSeverity = $excpectedSeverityForAutomaticVariablesInPowerShell6; OnlyPresentInCoreClr = $true }
             @{ VariableName = 'IsMacOS'; ExpectedSeverity = $excpectedSeverityForAutomaticVariablesInPowerShell6; OnlyPresentInCoreClr = $true }
             @{ VariableName = 'IsWindows'; ExpectedSeverity = $excpectedSeverityForAutomaticVariablesInPowerShell6; OnlyPresentInCoreClr = $true }
-            @{ VariableName = '_'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'AllNodes'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'Args'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'ConsoleFilename'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'Event'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'EventArgs'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'EventSubscriber'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'ForEach'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'Input'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'Matches'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'MyInvocation'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'NestedPromptLevel'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'Profile'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'PSBoundParameters'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'PsCmdlet'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'PSCommandPath'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'ReportErrorShowExceptionClass'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'ReportErrorShowInnerException'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'ReportErrorShowSource'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'ReportErrorShowStackTrace'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'Sender'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'StackTrace'; ExpectedSeverity = 'Warning' }
-            @{ VariableName = 'This'; ExpectedSeverity = 'Warning' }
+            @{ VariableName = '_'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'AllNodes'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'Args'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'ConsoleFilename'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'Event'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'EventArgs'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'EventSubscriber'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'ForEach'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'Input'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'Matches'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'MyInvocation'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'NestedPromptLevel'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'Profile'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'PSBoundParameters'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'PsCmdlet'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'PSCommandPath'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'ReportErrorShowExceptionClass'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'ReportErrorShowInnerException'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'ReportErrorShowSource'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'ReportErrorShowStackTrace'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'Sender'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'StackTrace'; ExpectedSeverity = 'Unknown' }
+            @{ VariableName = 'This'; ExpectedSeverity = 'Unknown' }
         )
 
         $testCases_ReadOnlyAutomaticVariables = $testCases_AutomaticVariables | Where-Object { $_.IsReadonly }

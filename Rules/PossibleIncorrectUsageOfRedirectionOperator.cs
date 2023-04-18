@@ -38,7 +38,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     {
                         yield return new DiagnosticRecord(
                             Strings.PossibleIncorrectUsageOfRedirectionOperatorError, fileRedirectionAst.Extent,
-                            GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
+                            GetName(), DiagnosticSeverity.Unknown, GetCategory(), fileName);
                     }
                 }
             }
@@ -94,7 +94,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
         
 

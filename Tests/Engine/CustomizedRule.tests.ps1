@@ -177,7 +177,7 @@ Describe "Test importing correct customized rules" {
 
 				if ($ast.GetCommandName() -eq 'Invoke-Something') {
 					New-Object -Typename 'Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord' `
-								-ArgumentList 'This is help',$ast.Extent,REPLACE_WITH_RULE_NAME_EXPRESSION,Warning,$ast.Extent.File,$null,$null
+								-ArgumentList 'This is help',$ast.Extent,REPLACE_WITH_RULE_NAME_EXPRESSION,Unknown,Unknown,$ast.Extent.File,$null,$null
 				}
 			}
 '@
@@ -204,7 +204,7 @@ Describe "Test importing correct customized rules" {
 
 			$violations.Count | Should -Be 1
 			$violations[0].RuleName | Should -BeExactly 'MyCustom\Test-StaticMethod'
-			$violations[0].Severity | Should -Be 'Warning'
+			$violations[0].Severity | Should -Be 'Unknown'
 			$violations[0].ScriptName | Should -BeExactly 'CLMTest.ps1'
 			$violations[0].Extent.StartLineNumber | Should -Be 4
 			$violations[0].Message | Should -BeExactly 'Avoid Using Static Methods'

@@ -57,7 +57,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         string.Format(CultureInfo.CurrentCulture, Strings.MisleadingBacktickError),
                             extent,
                             GetName(),
-                            DiagnosticSeverity.Medium,
+                            DiagnosticSeverity.Unknown,
                             GetCategory(), 
                             fileName,
                             suggestedCorrections: GetCorrectionExtent(extent));
@@ -135,7 +135,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
         
 

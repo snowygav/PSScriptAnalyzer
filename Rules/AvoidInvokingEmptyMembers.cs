@@ -49,7 +49,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                         string.Format(CultureInfo.CurrentCulture,
                                             Strings.AvoidInvokingEmptyMembersError,
                                             context),
-                                        member.Extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
+                                        member.Extent, GetName(), DiagnosticSeverity.Unknown, GetCategory(), fileName);
                             }
                         }
                     }
@@ -109,7 +109,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
         
 

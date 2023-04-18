@@ -45,7 +45,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                 if (0 != byteStream.Count(o => o > 0x7F))
                 { 
                     yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.UseBOMForUnicodeEncodedFileError, System.IO.Path.GetFileName(fileName), null),
-                                null, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
+                                null, GetName(), DiagnosticSeverity.Unknown, GetCategory(), fileName);
                 }
             }
         }
@@ -142,7 +142,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
         
 

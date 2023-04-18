@@ -102,7 +102,7 @@ function Measure-RequiresRunAsAdministrator
                 {
                     $result = New-Object `
                                 -Typename "Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord" `
-                                -ArgumentList $Messages.MeasureRequiresRunAsAdministrator,$assignmentAst.Extent,$PSCmdlet.MyInvocation.InvocationName,Information,$null
+                                -ArgumentList $Messages.MeasureRequiresRunAsAdministrator,$assignmentAst.Extent,$PSCmdlet.MyInvocation.InvocationName,Unknown,Unknown,$null
                     $results += $result
                 }
             }
@@ -112,7 +112,7 @@ function Measure-RequiresRunAsAdministrator
                 {
                     $result = New-Object `
                                 -Typename "Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord" `
-                                -ArgumentList $Messages.MeasureRequiresRunAsAdministrator,$assignmentAst.Extent,$PSCmdlet.MyInvocation.InvocationName,Information,$null
+                                -ArgumentList $Messages.MeasureRequiresRunAsAdministrator,$assignmentAst.Extent,$PSCmdlet.MyInvocation.InvocationName,Unknown,Unknown,$null
                     $results += $result
                 }
             }
@@ -200,7 +200,7 @@ function Measure-RequiresModules
                     {
                         $result = New-Object `
                                 -Typename "Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord" `
-                                -ArgumentList $Messages.MeasureRequiresModules,$ast.Extent,$PSCmdlet.MyInvocation.InvocationName,Information,$null
+                                -ArgumentList $Messages.MeasureRequiresModules,$ast.Extent,$PSCmdlet.MyInvocation.InvocationName,Unknown,Unknown,$null
 
                         $results += $result
                     }
@@ -214,7 +214,7 @@ function Measure-RequiresModules
                     {
                         $result = New-Object `
                                 -Typename "Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord" `
-                                -ArgumentList $Messages.MeasureRequiresModules,$ast.Extent,$PSCmdlet.MyInvocation.InvocationName,Information,$null
+                                -ArgumentList $Messages.MeasureRequiresModules,$ast.Extent,$PSCmdlet.MyInvocation.InvocationName,Unknown,Unknown,$null
 
                         $results += $result
                     }
@@ -298,7 +298,7 @@ if ($PSVersionTable.PSVersion -ge [Version]'4.0.0')
 						# $sbResult.BoundParameters["TypeName"].Value is a CommandElementAst, so we can return an extent.
 						$result = New-Object `
 									-Typename "Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord" `
-									-ArgumentList $Messages.MeasureLongClassName,$sbResult.BoundParameters["TypeName"].Value.Extent,$PSCmdlet.MyInvocation.InvocationName,Information,$null
+									-ArgumentList $Messages.MeasureLongClassName,$sbResult.BoundParameters["TypeName"].Value.Extent,$PSCmdlet.MyInvocation.InvocationName,Unknown,Unknown,$null
 
 						$results += $result
 					}
@@ -373,7 +373,7 @@ if ($PSVersionTable.PSVersion -ge [Version]'4.0.0')
 						# $sbResult.BoundParameters["TypeName"].Value is a CommandElementAst, so we can return an extent.
 						$result = New-Object `
 									-Typename "Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord" `
-									-ArgumentList $Messages.MeasureComObject,$sbResult.BoundParameters["ComObject"].Value.Extent,$PSCmdlet.MyInvocation.InvocationName,Warning,$null
+									-ArgumentList $Messages.MeasureComObject,$sbResult.BoundParameters["ComObject"].Value.Extent,$PSCmdlet.MyInvocation.InvocationName,Unknown,Unknown,$null
 
 						$results += $result
 					}
@@ -434,7 +434,7 @@ function Measure-DeprecatedWMIClass
             {
                 $result = New-Object `
                             -Typename "Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord" `
-                            -ArgumentList $Messages.MeasureDeprecatedWMIClass,$StringConstantExpressionAst.Extent,$PSCmdlet.MyInvocation.InvocationName,Information,$null
+                            -ArgumentList $Messages.MeasureDeprecatedWMIClass,$StringConstantExpressionAst.Extent,$PSCmdlet.MyInvocation.InvocationName,Unknown,Unknown,$null
 
                 $results += $result
             }
@@ -524,7 +524,7 @@ function Measure-CurlyBracket
                 {
                     $result = New-Object `
                                 -Typename "Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord" `
-                                -ArgumentList $Messages.MeasureCurlyBracket,$ast.Extent,$PSCmdlet.MyInvocation.InvocationName,Information,$null
+                                -ArgumentList $Messages.MeasureCurlyBracket,$ast.Extent,$PSCmdlet.MyInvocation.InvocationName,Unknown,Unknown,$null
 
                     $results += $result
                 }
@@ -596,7 +596,7 @@ function Measure-OverComment
             {
                 $result = New-Object `
                             -Typename "Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord" `
-                            -ArgumentList $Messages.MeasureOverComment,$Token[0].Extent,$PSCmdlet.MyInvocation.InvocationName,Warning,$null
+                            -ArgumentList $Messages.MeasureOverComment,$Token[0].Extent,$PSCmdlet.MyInvocation.InvocationName,Unknown,Unknown,$null
 
                 $results += $result
             }
@@ -651,7 +651,7 @@ function Measure-Backtick
             {
                 $result = New-Object `
                             -Typename "Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord" `
-                            -ArgumentList $Messages.MeasureBacktick,$lcToken.Extent,$PSCmdlet.MyInvocation.InvocationName,Warning,$null
+                            -ArgumentList $Messages.MeasureBacktick,$lcToken.Extent,$PSCmdlet.MyInvocation.InvocationName,Unknown,Unknown,$null
 
                 $results += $result
             }
@@ -711,7 +711,7 @@ function Measure-WriteHost
                 {
                     $result = New-Object `
                                 -Typename "Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord" `
-                                -ArgumentList $Messages.MeasureWriteHost,$CommandAst.Extent,$PSCmdlet.MyInvocation.InvocationName,Warning,$null
+                                -ArgumentList $Messages.MeasureWriteHost,$CommandAst.Extent,$PSCmdlet.MyInvocation.InvocationName,Unknown,Unknown,$null
 
                     $results += $result
                 }
@@ -788,7 +788,7 @@ function Measure-ErrorActionPreference
             {
                 $result = New-Object `
                             -Typename "Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord" `
-                            -ArgumentList $Messages.MeasureErrorActionPreference,$asts[0].Extent,"Measure-ErrorActionPreference",Warning,$null
+                            -ArgumentList $Messages.MeasureErrorActionPreference,$asts[0].Extent,"Measure-ErrorActionPreference",Unknown,Unknown,$null
 
                 $results += $result
             }
@@ -852,7 +852,7 @@ function Measure-QuestionVariable
             {
                 $result = New-Object `
                             -Typename "Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord" `
-                            -ArgumentList $Messages.MeasureQuestionVariable,$questionVariable.Extent,$PSCmdlet.MyInvocation.InvocationName,Warning,$null
+                            -ArgumentList $Messages.MeasureQuestionVariable,$questionVariable.Extent,$PSCmdlet.MyInvocation.InvocationName,Unknown,Unknown,$null
 
                 $results += $result
             }
@@ -932,7 +932,7 @@ function Measure-HelpNote
             {
                 $result = New-Object `
                             -Typename "Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord" `
-                            -ArgumentList $Messages.MeasureHelpNote,$FunctionDefinitionAst.Extent,$PSCmdlet.MyInvocation.InvocationName,Warning,$null
+                            -ArgumentList $Messages.MeasureHelpNote,$FunctionDefinitionAst.Extent,$PSCmdlet.MyInvocation.InvocationName,Unknown,Unknown,$null
 
                 $results += $result
             }

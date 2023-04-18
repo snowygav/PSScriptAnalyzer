@@ -86,7 +86,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                 yield return new DiagnosticRecord(message,
                                                                     paramAst.Extent, 
                                                                     GetName(), 
-                                                                    DiagnosticSeverity.Medium, 
+                                                                    DiagnosticSeverity.Unknown, 
                                                                     GetCategory(), 
                                                                     fileName, 
                                                                     paramAst.Name.VariablePath.UserPath);
@@ -172,7 +172,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
         
 

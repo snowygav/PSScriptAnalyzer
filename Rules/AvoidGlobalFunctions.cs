@@ -63,7 +63,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                 string.Format(CultureInfo.CurrentCulture, Strings.AvoidGlobalFunctionsError),
                                 functionNameExtent,
                                 GetName(),
-                                DiagnosticSeverity.Medium,
+                                DiagnosticSeverity.Unknown,
                                 GetCategory(), 
                                 fileName,
                                 functionDefinitionAst.Name));
@@ -103,7 +103,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
         
 

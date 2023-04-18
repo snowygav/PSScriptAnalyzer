@@ -43,7 +43,7 @@ Get-ScriptAnalyzerRule
 ### EXAMPLE 2 - Gets only rules with the Error severity
 
 ```powershell
-Get-ScriptAnalyzerRule -Severity Error
+Get-ScriptAnalyzerRule -Severity Critical
 ```
 
 ### EXAMPLE 3 - Run only the DSC rules with the Error severity
@@ -52,7 +52,7 @@ This example runs only the DSC rules with the Error severity on the files in the
 module.
 
 ```powershell
-$DSCError = Get-ScriptAnalyzerRule -Severity Error | Where-Object SourceName -eq PSDSC
+$DSCError = Get-ScriptAnalyzerRule -Severity Critical | Where-Object SourceName -eq PSDSC
 $Path = "$home\Documents\WindowsPowerShell\Modules\MyDSCModule\*"
 Invoke-ScriptAnalyzerRule -Path $Path -IncludeRule $DSCError -Recurse
 ```
@@ -66,7 +66,7 @@ This example gets rules with "Parameter" or "Alias" in the name that generate an
 You can use this set of rules to test the parameters of your script or module.
 
 ```powershell
-$TestParameters = Get-ScriptAnalyzerRule -Severity Error, Warning -Name *Parameter*, *Alias*
+$TestParameters = Get-ScriptAnalyzerRule -Severity Critical, High, Medium -Name *Parameter*, *Alias*
 ```
 
 ### EXAMPLE 5 - Get custom rules

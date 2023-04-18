@@ -125,7 +125,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         string.Format(CultureInfo.CurrentCulture, Strings.AvoidUsingCmdletAliasesError, commandName, cmdletNameIfCommandNameWasAlias),
                         GetCommandExtent(cmdAst),
                         GetName(),
-                        DiagnosticSeverity.Medium,
+                        DiagnosticSeverity.Unknown,
                         GetCategory(),
                         fileName,
                         commandName,
@@ -161,7 +161,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                             string.Format(CultureInfo.CurrentCulture, Strings.AvoidUsingCmdletAliasesMissingGetPrefixError, commandName, commdNameWithGetPrefix),
                             GetCommandExtent(cmdAst),
                             GetName(),
-                            DiagnosticSeverity.Medium,
+                            DiagnosticSeverity.Unknown,
                             GetCategory(),
                             fileName,
                             commandName,
@@ -286,7 +286,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
 
 

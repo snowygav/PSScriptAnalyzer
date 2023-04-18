@@ -39,7 +39,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     string.Format(CultureInfo.CurrentCulture, Strings.UseShouldProcessForStateChangingFunctionsError, funcDefAst.Name), 
                     Helper.Instance.GetScriptExtentForFunctionName(funcDefAst),                    
                     this.GetName(), 
-                    DiagnosticSeverity.Medium, 
+                    DiagnosticSeverity.Unknown, 
                     GetCategory(),
                     fileName);
             }
@@ -130,7 +130,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
         
 

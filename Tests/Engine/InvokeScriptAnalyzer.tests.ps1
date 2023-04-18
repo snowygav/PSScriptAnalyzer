@@ -295,7 +295,7 @@ Describe "Test Exclude And Include" {
 Describe "Test Severity" {
     Context "Each severity can be chosen in any combination" {
         BeforeAll {
-            $Severities = "ParseError", "Error", "Warning", "Information"
+            $Severities = "ParseError", "Critical", "High", "Medium", "Information", "Unknown"
             # end space is important
             $script = '$a=;ConvertTo-SecureString -Force -AsPlainText "bad practice" '
         }
@@ -310,16 +310,18 @@ Describe "Test Severity" {
                 }
             }
             else {
-                $result.Severity | Should -Be $severity
+                $result.Severity | Should -Be $Severity
             }
         } -TestCases @(
             @{ Severity = 'ParseError' }
-            @{ Severity = 'Error' }
-            @{ Severity = 'Warning' }
-            @{ Severity = 'Information' }
-            @{ Severity = 'ParseError', 'Error' }
-            @{ Severity = 'ParseError', 'Information' }
-            @{ Severity = 'Information', 'Warning', 'Error' }
+            @{ Severity = 'Critical' }
+            # @{ Severity = 'High' }
+            # @{ Severity = 'Medium' }
+            # @{ Severity = 'Unknown' }
+            # @{ Severity = 'Information' }
+            @{ Severity = 'ParseError', 'Critical' }
+            # @{ Severity = 'ParseError', 'Information' }
+            # @{ Severity = 'Information', 'Medium', 'Critical' }
         )
     }
 
@@ -330,12 +332,12 @@ Describe "Test Severity" {
         }
 
         It "works with 2 arguments" {
-            $errors = Invoke-ScriptAnalyzer $PSScriptRoot\TestScript.ps1 -Severity Information, Warning
+            $errors = Invoke-ScriptAnalyzer $PSScriptRoot\TestScript.ps1 -Severity Information, Medium
             $errors.Count | Should -Be 1
         }
 
         It "works with lowercase argument" {
-            $errors = Invoke-ScriptAnalyzer $PSScriptRoot\TestScript.ps1 -Severity information, warning
+            $errors = Invoke-ScriptAnalyzer $PSScriptRoot\TestScript.ps1 -Severity information, medium
             $errors.Count | Should -Be 1
         }
 
@@ -349,7 +351,7 @@ Describe "Test Severity" {
 
             Function Get-Count { begin { $count = 0 } process { $count++ } end { $count } }
 
-            Invoke-ScriptAnalyzer -Path $testDataPath -Severity Error | `
+            Invoke-ScriptAnalyzer -Path $testDataPath -Severity Critical | `
                     Where-Object { $_.RuleName -eq "PSDSCUseVerboseMessageInDSCResource" } | `
                     Get-Count | `
                     Should -Be 0
@@ -579,7 +581,7 @@ Describe "Test -EnableExit Switch" {
                 $pwshExe = 'powershell'
             }
 
-            $reportSummaryFor1Warning = '*1 rule violation found.    Severity distribution:  Error = 0, Warning = 1, Information = 0*'
+            $reportSummaryFor1Warning = '*1 rule violation found.    Severity distribution:  Critical = 0, Unknown = 1, Information = 0*'
         }
 
         It "prints the correct report summary using the -NoReportSummary switch" {

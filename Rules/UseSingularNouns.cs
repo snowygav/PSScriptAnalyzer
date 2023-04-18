@@ -86,7 +86,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         string.Format(CultureInfo.CurrentCulture, Strings.UseSingularNounsError, funcAst.Name),
                         extent,
                         GetName(),
-                        DiagnosticSeverity.Medium,
+                        DiagnosticSeverity.Unknown,
                         GetCategory(),
                         fileName,
                         suggestedCorrections: new CorrectionExtent[] { GetCorrection(pluralizer, extent, funcAst.Name, noun) });
@@ -145,7 +145,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
         
 

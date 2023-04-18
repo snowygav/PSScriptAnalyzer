@@ -9,9 +9,9 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
     public enum RuleCategory : uint
     {
         /// <summary>
-        /// Input Validation
+        /// Unknown
         /// </summary>
-        InputValidation = 0,
+        Unknown = 0,
 
         /// <summary>
         /// Output Encoding
@@ -77,5 +77,12 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic
         /// General Coding Practices
         /// </summary>
         GeneralCodingPractices = 13,
+
+        /// <summary>
+        /// Input Validation
+        /// </summary>
+        InputValidation = 14,
+
+
     };
 }

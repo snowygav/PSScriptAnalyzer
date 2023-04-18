@@ -121,13 +121,13 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
         
 
         private DiagnosticSeverity GetDianosticSeverity()
         {
-            return DiagnosticSeverity.Medium;
+            return DiagnosticSeverity.Unknown;
         }
 
         /// <summary>

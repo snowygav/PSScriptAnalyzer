@@ -73,7 +73,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         if (paramAst.DefaultValue != null)
                         {
                             yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.AvoidDefaultValueForMandatoryParameterError, paramAst.Name.VariablePath.UserPath),
-                            paramAst.Name.Extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName, paramAst.Name.VariablePath.UserPath);
+                            paramAst.Name.Extent, GetName(), DiagnosticSeverity.Unknown, GetCategory(), fileName, paramAst.Name.VariablePath.UserPath);
                         }
                     }
                 }
@@ -130,7 +130,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
         
         /// <summary>

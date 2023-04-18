@@ -1521,7 +1521,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer
                         parseError.Extent,
                         parseError.ErrorId.ToString(),
                         DiagnosticSeverity.ParseError,
-                        RuleCategory.GeneralCodingPractices,
+                        RuleCategory.Unknown,
                         String.Empty // no script file
                         )
                         );
@@ -1647,10 +1647,10 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer
                 : null;
             DiagnosticSeverity severity = psObject.TryGetPropertyValue("Severity", out object severityValue)
                 ? LanguagePrimitives.ConvertTo<DiagnosticSeverity>(severityValue)
-                : DiagnosticSeverity.Medium;
+                : DiagnosticSeverity.Unknown;
             RuleCategory category =psObject.TryGetPropertyValue("Category", out object categoryValue)
                 ? LanguagePrimitives.ConvertTo<RuleCategory>(categoryValue)
-                : RuleCategory.GeneralCodingPractices;
+                : RuleCategory.Unknown;
 
             bool isValid = true;
             isValid &= CheckHasRequiredProperty("Message", message);
@@ -1722,7 +1722,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer
                 else
                 {
                     diagnosticRecords.Add(new DiagnosticRecord(
-                        string.Format(Strings.TypeNotFoundParseErrorFound, parseError.Extent), parseError.Extent, "TypeNotFound", DiagnosticSeverity.Information, RuleCategory.GeneralCodingPractices, parseError.Extent.File));
+                        string.Format(Strings.TypeNotFoundParseErrorFound, parseError.Extent), parseError.Extent, "TypeNotFound", DiagnosticSeverity.Information, RuleCategory.Unknown, parseError.Extent.File));
                 }
             }
 
@@ -1940,7 +1940,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer
                             parseError.Extent,
                             parseError.ErrorId.ToString(),
                             DiagnosticSeverity.ParseError,
-                            RuleCategory.GeneralCodingPractices,
+                            RuleCategory.Unknown,
                             filePath)
                         );
                 }

@@ -226,7 +226,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                     string.Format(CultureInfo.CurrentCulture, Strings.UseDeclaredVarsMoreThanAssignmentsError, key),
                     assignmentsDictionary_OrdinalIgnoreCase[key].Left.Extent,
                     GetName(),
-                    DiagnosticSeverity.Medium,
+                    DiagnosticSeverity.Unknown,
                     GetCategory(), 
                     fileName,
                     key);

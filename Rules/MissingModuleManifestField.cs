@@ -59,7 +59,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                 errorRecord.Exception.Message, 
                                 hashTableAst.Extent, 
                                 GetName(), 
-                                DiagnosticSeverity.Medium, 
+                                DiagnosticSeverity.Unknown, 
                                 GetCategory(), 
                                 fileName,
                                 suggestedCorrections:GetCorrectionExtent(hashTableAst as HashtableAst));
@@ -185,7 +185,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
         
 

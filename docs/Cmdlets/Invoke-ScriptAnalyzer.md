@@ -18,9 +18,7 @@ Evaluates a script or module based on selected best practice rules
 
 ```
 Invoke-ScriptAnalyzer [-Path] <string> [-CustomRulePath <string[]>] [-RecurseCustomRulePath]
- [-IncludeDefaultRules] [-ExcludeRule <string[]>] [-IncludeRule <string[]>] [-Severity <string[]>]
- [-Recurse] [-SuppressedOnly] [-Fix] [-EnableExit] [-Settings <Object>] [-SaveDscDependency]
- [-ReportSummary] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-IncludeDefaultRules] [-ExcludeRule <string[]>] [-IncludeRule <string[]>] [-Severity <string[]>] [-Category <string[]>] [-Recurse] [-SuppressedOnly] [-Fix] [-EnableExit] [-Settings <Object>] [-SaveDscDependency] [-ReportSummary] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Path_IncludeSuppressed
@@ -28,7 +26,7 @@ Invoke-ScriptAnalyzer [-Path] <string> [-CustomRulePath <string[]>] [-RecurseCus
 ```
 Invoke-ScriptAnalyzer [-Path] <string> -IncludeSuppressed [-CustomRulePath <string[]>]
  [-RecurseCustomRulePath] [-IncludeDefaultRules] [-ExcludeRule <string[]>]
- [-IncludeRule <string[]>] [-Severity <string[]>] [-Recurse] [-Fix] [-EnableExit]
+ [-IncludeRule <string[]>] [-Severity <string[]>] [-Category <string[]>] [-Recurse] [-Fix] [-EnableExit]
  [-Settings <Object>] [-SaveDscDependency] [-ReportSummary] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
@@ -38,7 +36,7 @@ Invoke-ScriptAnalyzer [-Path] <string> -IncludeSuppressed [-CustomRulePath <stri
 ```
 Invoke-ScriptAnalyzer [-ScriptDefinition] <string> -IncludeSuppressed [-CustomRulePath <string[]>]
  [-RecurseCustomRulePath] [-IncludeDefaultRules] [-ExcludeRule <string[]>]
- [-IncludeRule <string[]>] [-Severity <string[]>] [-Recurse] [-EnableExit] [-Settings <Object>]
+ [-IncludeRule <string[]>] [-Severity <string[]>] [-Category <string[]>] [-Recurse] [-EnableExit] [-Settings <Object>]
  [-SaveDscDependency] [-ReportSummary] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -47,7 +45,7 @@ Invoke-ScriptAnalyzer [-ScriptDefinition] <string> -IncludeSuppressed [-CustomRu
 ```
 Invoke-ScriptAnalyzer [-ScriptDefinition] <string> [-CustomRulePath <string[]>]
  [-RecurseCustomRulePath] [-IncludeDefaultRules] [-ExcludeRule <string[]>]
- [-IncludeRule <string[]>] [-Severity <string[]>] [-Recurse] [-SuppressedOnly] [-EnableExit]
+ [-IncludeRule <string[]>] [-Severity <string[]>] [-Category <string[]>] [-Recurse] [-SuppressedOnly] [-EnableExit]
  [-Settings <Object>] [-SaveDscDependency] [-ReportSummary] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
@@ -120,10 +118,10 @@ This example runs Script Analyzer on `Test-Script.ps1` with the standard rules a
 Invoke-ScriptAnalyzer -Path D:\test_scripts\Test-Script.ps1 -CustomRulePath C:\CommunityAnalyzerRules -IncludeDefaultRules
 ```
 
-### EXAMPLE 6 - Run only the rules that are Error severity and have the PSDSC source name
+### EXAMPLE 6 - Run only the rules that are Critical severity and have the PSDSC source name
 
 ```powershell
-$DSCError = Get-ScriptAnalyzerRule -Severity Error | Where SourceName -eq PSDSC
+$DSCError = Get-ScriptAnalyzerRule -Severity Critical | Where SourceName -eq PSDSC
 $Path = "$home\Documents\WindowsPowerShell\Modules\MyDSCModule"
 Invoke-ScriptAnalyzerRule -Path $Path -IncludeRule $DSCError -Recurse
 ```
@@ -188,7 +186,7 @@ value of the **Profile** parameter is the path to the Script Analyzer profile.
 ```powershell
 # In .\ScriptAnalyzerProfile.txt
 @{
-    Severity = @('Error', 'Warning')
+    Severity = @('Critial', 'High', 'Medium')
     IncludeRules = 'PSAvoid*'
     ExcludeRules = '*WriteHost'
 }

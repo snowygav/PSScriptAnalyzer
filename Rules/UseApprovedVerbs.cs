@@ -64,7 +64,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                             extent = funcAst.Extent;
                         }
                         yield return new DiagnosticRecord(string.Format(CultureInfo.CurrentCulture, Strings.UseApprovedVerbsError, funcName),
-                            extent, GetName(), DiagnosticSeverity.Medium, GetCategory(), fileName);
+                            extent, GetName(), DiagnosticSeverity.Unknown, GetCategory(), fileName);
                     }
                 }
             }
@@ -119,7 +119,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
         
 

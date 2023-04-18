@@ -36,7 +36,7 @@ function Measure-RequiresRunAsAdministrator
     $extent = $null
     $dr = New-Object `
             -Typename "Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord" `
-            -ArgumentList "This is help",$extent,$PSCmdlet.MyInvocation.InvocationName,Warning,$null,$null,$l
+            -ArgumentList "This is help",$extent,$PSCmdlet.MyInvocation.InvocationName,Unknown,Unknown,$null,$null,$l
     $dr.RuleSuppressionID = "MyRuleSuppressionID"
     return $dr
 }

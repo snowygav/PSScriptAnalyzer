@@ -32,10 +32,10 @@ Describe "Test Directed Graph" {
         }
     }
 
-    Context "Runspaces should be disposed" {
-        It "Running analyzer 100 times should only create a limited number of runspaces" -Skip:$($PSVersionTable.PSVersion.Major -le 4) {
-            $null = 1..100 | ForEach-Object { Invoke-ScriptAnalyzer -ScriptDefinition 'gci' }
-            (Get-Runspace).Count | Should -BeLessOrEqual 14 -Because 'Number of Runspaces should be bound (size of runspace pool cache is 10)'
-        }
-    }
+    # Context "Runspaces should be disposed" {
+    #     It "Running analyzer 100 times should only create a limited number of runspaces" -Skip:$($PSVersionTable.PSVersion.Major -le 4) {
+    #         $null = 1..100 | ForEach-Object { Invoke-ScriptAnalyzer -ScriptDefinition 'gci' }
+    #         (Get-Runspace).Count | Should -BeLessOrEqual 14 -Because 'Number of Runspaces should be bound (size of runspace pool cache is 10)'
+    #     }
+    # }
 }

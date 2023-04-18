@@ -61,7 +61,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                         string.Format(CultureInfo.CurrentCulture, Strings.UseCorrectCasingError, commandName, correctlyCasedCommandName),
                         GetCommandExtent(commandAst),
                         GetName(),
-                        DiagnosticSeverity.Medium,
+                        DiagnosticSeverity.Unknown,
                         GetCategory(), 
                         fileName,
                         commandName,
@@ -95,7 +95,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
                                 string.Format(CultureInfo.CurrentCulture, Strings.UseCorrectCasingParameterError, parameterName, commandName, correctlyCasedParameterName),
                                 GetCommandExtent(commandAst),
                                 GetName(),
-                                DiagnosticSeverity.Medium,
+                                DiagnosticSeverity.Unknown,
                                 GetCategory(), 
                                 fileName,
                                 commandName,
@@ -216,7 +216,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         /// <returns></returns>
         public override RuleCategory GetCategory()
         {
-            return RuleCategory.GeneralCodingPractices;
+            return RuleCategory.Unknown;
         }
         
 

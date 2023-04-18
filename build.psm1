@@ -400,8 +400,12 @@ function Test-ScriptAnalyzer
                 & $scriptBlock
             }
             else {
-                $powershell = (Get-Process -id $PID).MainModule.FileName
-                & ${powershell} -Command $scriptBlock
+                # $powershell = (Get-Process -id $PID).MainModule.FileName
+                ##########################################################
+                Invoke-Pester -Path 'C:\Git\PSScriptAnalyzer\Tests\Build','C:\Git\PSScriptAnalyzer\Tests\Engine','C:\Git\PSScriptAnalyzer\Tests\Rules','C:\Git\PSScriptAnalyzer\Tests\Documentation'
+                ##########################################################
+
+                # & ${powershell} -Command $scriptBlock
             }
         }
         finally {
